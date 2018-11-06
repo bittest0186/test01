@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+	#main {
+		border: 10px solid black;
+		width: 800px; /* 페이지 크기 */
+		margin: 0px auto; /* 페이지 전체의 수평 정렬 */
+		padding: 20px;
+		
+		/* 현재 개체의 위치를 지정하는 목적(X), 
+			자식 태그 중 absolute 가진 자식의 기준점 역할(**) */
+		position: relative;
+		left: 0px;
+		top: 0px;
+	}
+	
+	#main #search {
+		width: 400px;
+	}
+	
+	#main header {
+		text-align: center; 
+		padding: 30px 0px;
+	}
+	
+	#list td {
+		line-height: 1.4em;
+	}
+	
+	#wlist {
+		border: 1px solid gray;
+		width: 400px;
+		position: absolute;
+		left: 240px;
+		top: 70px;
+		background-color: white;
+		/* visibility: hidden; */
+	}
+	
+	#wlist div {
+		padding: 5px 10px;
+	}
+	
+	#wlist div:hover {
+		background-color: #eee;
+		cursor: pointer;
+	}
+	
+</style>
+</head>
+<body>
+	<!-- ex30_position.htm -->
+	
+	<!-- 페이지 컨테이너 -->
+	<div id="main">
+		<header>
+			검색 : <input type="text" id="search" autocomplete="off">
+		</header>
+		<section>
+			<h2>Contents</h2>
+			
+			<table id="list" class="table">
+			<tr>
+				<th id="col1">pic</th>
+				<th id="col2">name</th>
+				<th id="col3">info</th>
+				<th id="col4">etc</th>
+			</tr>
+			<tr>
+				<td><img src="../images/man_01.png" alt="" /></td>
+				<td>Lorem ipsum.</td>
+				<td class="cell3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo nostrum aliquam sit nesciunt distinctio incidunt.</td>
+				<td>Lorem ipsum dolor sit amet.</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_02.png" alt="" /></td>
+				<td>Aspernatur iusto.</td>
+				<td class="cell3">Magni voluptas nisi quisquam dolorum vel tempora hic molestiae tenetur similique et! Necessitatibus earum rerum.</td>
+				<td>Neque mollitia similique dolorum rem.</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_03.png" alt="" /></td>
+				<td>Laborum eligendi.</td>
+				<td class="cell3">Eum voluptatum molestias nulla enim doloribus aliquid numquam unde accusamus minus quo. Velit nihil rerum.</td>
+				<td>Blanditiis dolore veritatis consequuntur iusto.</td>
+			</tr>
+			<tr>
+				<td><img src="../images/woman_01.png" alt="" /></td>
+				<td>Similique fugit.</td>
+				<td class="cell3">Nulla minus labore aperiam provident ad perferendis quaerat quos quidem numquam odio beatae commodi veritatis!</td>
+				<td>Enim modi voluptate tempora provident.</td>
+			</tr>
+			<tr>
+				<td><img src="../images/woman_02.png" alt="" /></td>
+				<td>Repellat neque!</td>
+				<td class="cell3">Quaerat animi vero reiciendis rem aliquam sed ea praesentium accusantium magnam. Error sequi est commodi.</td>
+				<td>Modi iure voluptatem aliquid dolorum!</td>
+			</tr>
+			<tr>
+				<td><img src="../images/woman_03.png" alt="" /></td>
+				<td>Pariatur eum.</td>
+				<td class="cell3">Minima distinctio corrupti eos animi fuga aut aperiam praesentium temporibus nihil esse vero cum blanditiis.</td>
+				<td>Perferendis suscipit nobis ad iste!</td>
+			</tr>
+			<tr>
+				<td><img src="../images/man_01.png" alt="" /></td>
+				<td>Dignissimos culpa.</td>
+				<td class="cell3">Labore esse ullam fuga temporibus magnam sapiente beatae et nemo voluptate voluptatem ut debitis nihil.</td>
+				<td>Libero dolores voluptas ipsum rem.</td>
+			</tr>
+		</table>
+		
+		<div style="clear:both;"></div>
+		
+		</section>
+		
+		<!-- 추천 검색어 창 -->
+		<!--  
+			id="list" : 유일한 값
+			-> 중복값 발생 -> 대부분의 브라우저는 id도 중복이 되면 class 처럼 중복 적용한다.
+		-->
+		<div id="wlist">
+			<div>Java</div>
+			<div>Java Convention</div>
+			<div>Java Setting</div>
+			<div>Java</div>
+			<div>Java Convention</div>
+			<div>Java Setting</div>
+			<div>Java</div>
+			<div>Java Convention</div>
+			<div>Java Setting</div>
+		</div>
+		
+	</div>
+	
+	
+	
+	
+	
+	<script>
+	
+		/* 
+		document.getElementById("search").onfocus = function() {
+			document.getElementById("wlist").style.visibility = "visible";
+		};
+		
+		document.getElementById("search").onblur = function() {
+			document.getElementById("wlist").style.visibility = "hidden";
+		}; 
+		*/
+		
+	
+	</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

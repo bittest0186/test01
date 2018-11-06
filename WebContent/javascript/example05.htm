@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	table{
+		border-collapse: collapse;
+	}
+	
+	td,th {
+		border: 1px solid black;
+	}
+	
+</style>
+<script>
+
+	var jumin1,jumin2;
+	var birth1,birth2,birth3;
+	var gender1,gender2;
+
+	window.onload = function() {
+		
+		jumin1 = document.all.jumin1;
+		jumin2 = document.all.jumin2;
+
+		birth1 = document.all.birth1;
+		birth2 = document.all.birth2;
+		birth3 = document.all.birth3;
+		
+		gender1 = document.all.gender1;
+		gender2 = document.all.gender2;
+		
+		jumin1.onkeyup = function() {
+			
+			if(jumin1.value.length == 6){
+				birth1.value = "19" + jumin1.value.substring(0,2);
+				birth2.value = jumin1.value.substring(2,4);
+				
+					birth3.value = jumin1.value.substring(4);
+				jumin2.focus();
+			}
+			
+		}
+		
+		jumin2.onkeyup = function() {
+			
+			//alert(jumin2.value.substring(0,1));
+			
+ 			if((jumin2.value.substring(0,1)%2) != 0){
+				gender1.checked = true;
+				gender2.checked = false;
+			} else {
+				gender1.checked = false;
+				gender2.checked = true;
+			}
+			
+		}
+	
+	};
+
+</script>
+</head>
+<body>
+	<!-- example05.htm -->
+	
+	<h2>회원가입</h2>
+	
+	<table>
+		<tr>
+			<th>주민번호</th>
+			<td>
+				<input type="text" name="jumin1" size="6" maxlength="6"/>
+				-
+				<input type="text" name="jumin2" size="7"/>
+			</td>
+		</tr>
+		<tr>
+			<th>생년월일</th>
+			<td>
+				<input type="text" name="birth1" size="4"/>
+				년
+				<input type="text" name="birth2" size="4"/>
+				월
+				<input type="text" name="birth3" size="4"/>
+				일
+			</td>
+		</tr>
+		<tr>
+			<th>성별</th>
+			<td>
+				<input type="radio" name="gender1" id="gender"/><label for="gender">남자</label>
+				<input type="radio" name="gender2" id="gender"/><label for="gender">여자</label>
+			</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#main {
+		width:850px;
+		border: 1px solid black;
+	}
+	
+	#top {
+		margin : 15px auto;
+		width: 800px;
+		padding : 10px 0px;
+		font-size: 30px;
+		
+		border-bottom: 1px solid black;
+	}
+	
+	#image{
+		width:800px;
+		margin: 0 auto;
+		
+	}
+	
+	#top img{
+		
+		margin: 5px;
+		opacity: 0.3;
+		border-radius: 80px;
+		transition : all 1s;
+	}
+	
+	
+	#dog:checked ~ #imgdog {
+		border-radius: 0px;
+		opacity: 1;
+	}
+	
+	#cat:checked ~ #imgcat{
+		border-radius: 0px;
+		opacity: 1;
+	}
+	
+	
+	
+
+</style>
+</head>
+<body>
+	<!-- test9.htm -->
+	
+	<div id="main">
+	<div id="top">
+		<input type="radio" id="dog" name="dc" /><label for="dog">강아지</label>
+		<input type="radio" id="cat" name="dc" /><label for="cat">고양이</label>
+		<hr>
+			<img src="../images/cat01.jpg"id="imgcat" class="cat" />
+			<img src="../images/dog01.jpg"id="imgdog" class="dog" />
+			<img src="../images/cat02.jpg"id="imgcat" class="cat" />
+			<img src="../images/dog02.jpg"id="imgdog" class="dog" />
+			<img src="../images/dog03.jpg"id="imgdog" class="dog" />
+			<img src="../images/cat03.jpg"id="imgcat" class="cat" />
+			<img src="../images/cat04.jpg"id="imgcat" class="cat" />
+			<img src="../images/dog04.jpg"id="imgdog" class="dog" />
+			<img src="../images/cat05.jpg"id="imgcat" class="cat" />
+			<img src="../images/dog05.jpg"id="imgdog" class="dog" />
+	</div>
+</body>
+</html>

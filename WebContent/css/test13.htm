@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#box{
+		width: 1200px;
+		height:450px;
+		border: 10px solid black;
+	}
+	
+	#box1{
+		width: 400px;
+		height: 450px;
+		float: left;
+	}
+	
+	
+	
+	.small{
+		width:200px;
+		height: 150px;
+		float: left;
+	}
+	.big{
+		width:400px;
+		height: 300px;
+	}
+	
+	.image{
+		opacity:0.3;
+		border-radius:10%;
+		column-gap: 0px;
+		transition:opacity 1s;
+	}
+	
+	.image:hover{
+		opacity:1;
+	}
+	
+	
+
+</style>
+</head>
+<body>
+	<!-- test13.htm -->
+	
+	<div id="box">
+		<div id="box1">
+			<img src="../images/cat01.jpg" class="image big" style="margin-bottom: -5px;">
+			<img src="../images/cat02.jpg" class="image small">
+			<img src="../images/dog01.jpg" class="image small">
+		</div>
+		<div id="box1">
+			<img src="../images/dog02.jpg" class="image small">
+			<img src="../images/cat04.jpg" class="image small">
+			<img src="../images/cat03.jpg" class="image big">
+		</div>
+		<div id="box1">
+			<img src="../images/cat04.jpg" class="image big" style="margin-bottom: -5px;">
+			<img src="../images/dog03.jpg" class="image small">
+			<img src="../images/cat05.jpg" class="image small">
+		</div>
+	</div>
+	
+</body>
+</html>

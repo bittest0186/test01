@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+	var txt = "안녕하세요. 홍길동님. 안녕히가세요. 홍길동님";
+	
+	//1.길이
+	console.log(txt.length);
+	
+	//2.검색
+	// '안' 두개가 존재 하더라도 첫번째 자리만 찾을 수 있다.
+	console.log(txt.indexOf("안"));
+	
+	
+	// 마지막 글자 자리 찾는다.
+	console.log(txt.lastIndexOf("안"));
+	
+	
+	//3.
+	//대소문자 반환
+	txt="Hello ~Kim";
+	
+	console.log(txt.toUpperCase());
+	console.log(txt.toLowerCase());
+
+	//4.
+	// - 처음 만나는 요소만 치환한다.(반복X)
+	console.log(txt.replace("Kim","Jang"));
+	console.log(txt.replace("l","L")); //Hello ~Kim -> HeLlo ~Kim
+	
+	//5.추출
+	console.log(txt.substring(3,8));
+	console.log(txt.substring(3));
+	
+	console.log(txt.substr(3,5));
+	console.log(txt.substr(3));
+	
+	console.log(txt.charAt(0));
+	console.log(txt.charCodeAt(0)); //-> 문자 코드 반환 H -> 72
+	
+	//7.분할
+	var names = "홍길동,아무개,하하하,호호호";
+	
+	console.log(names.split(","));
+	
+	console.log(new Date());
+	
+	console.clear();
+	
+	var time = new Date();
+	
+	/* time = time.toDateString(); */
+	
+	/* console.log(time.substring(0,3)); */
+	
+	console.log(time.toLocaleString());
+	
+	console.log(time.toLocaleDateString());
+	
+	console.log(time.toLocaleTimeString());
+	
+	
+	var nums = new Array();
+	
+	nums = new Array(100,200,300);
+	console.log(nums);
+	nums = [100,200,300];
+	
+	console.log(nums);
+	
+	var nums1 = [];
+	
+	for(i=0; i<=100; i++){
+		//nums1[i] = i;
+		nums1.push(i);
+	}
+		console.log(nums1); // 결과 -> (101) [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, ...  90, 91, 92, 93, 94, 95, 96, 97, 98, 99, …]
+	
+	console.log(typeof nums1);
+	
+		
+		
+	console.log(Math.random()*10 +1);
+		
+	var random = Math.random()*10;
+	
+	//console.log(random.subchar(0,1));
+	
+	console.log(parseInt(Math.random()*10+1));
+	
+	
+	try{
+		var n = 0;
+		console.log(100/n); // -> Infinity
+		throw "exception";
+		console.log("결과");
+	} catch(e) {
+		console.log("예외처리");
+	}
+	
+	
+	function init() {
+		
+	
+	var now = new Date();
+	console.log(now)
+	console.log(now.getDate());
+	var flag = now.getDate() > 10 ? true : false;
+	//var flag = now.getHours() < 12 ? true : false;
+	if(flag) {
+		window.document.body.bgColor = "yellow";
+	} else {
+		window.document.body.bgColor = "red";		
+	}
+	
+	}
+	
+	
+	
+	
+	
+</script>
+</head>
+<body onload="init();">
+	
+</body>
+</html>

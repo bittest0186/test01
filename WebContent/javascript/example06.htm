@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+table {
+	border-collapse: collapse;
+}
+
+td,th {
+	border: 1px solid black;
+	align: center;
+}
+
+select {
+	width: 100px;
+}
+
+input {
+	align: center;
+	margin-bottom: 5px;
+}
+
+</style>
+<script>
+
+	window.onload = function() {
+	
+	};
+	
+	
+	function add() {
+		
+		var sel1 = document.all.sel1;
+		var sel2 = document.all.sel2;
+		
+		var selOp = sel1.options[sel1.selectedIndex]
+		var newOp = new Option();
+		
+		newOp.value = selOp.value;
+		newOp.text = selOp.text;
+		
+		sel2.options.add(newOp);
+		
+		sel1.options.remove(sel1.selectedIndex);
+	}
+	
+	function remove() {
+		
+		var sel1 = document.all.sel1;
+		var sel2 = document.all.sel2;
+		
+		var selOp = sel2.options[sel2.selectedIndex]
+		var newOp = new Option();
+		
+		newOp.value = selOp.value;
+		newOp.text = selOp.text;
+		
+		sel1.options.add(newOp);
+		
+		sel2.options.remove(sel2.selectedIndex);
+	}
+	
+	function addAll() {
+		
+		var sel1 = document.all.sel1;
+		var sel2 = document.all.sel2;
+		
+		
+		for(var i=0; i<sel1.options.length;i++){
+// 			sel1.options[i].selected;
+			
+			var selOp = sel1.options[i];
+			var newOp = new Option();
+			
+			newOp.value = selOp.value;
+			newOp.text = selOp.text;
+			
+			sel2.options.add(newOp);
+			
+// 			sel1.options.remove(i);
+		}
+		
+		var num = sel1.options.length;
+		
+		for(var i=0; i<num; i++) {
+			
+			sel1.options.remove(sel1.options);
+			
+		}
+		
+	}
+	
+	function removeAll() {
+		
+		var sel1 = document.all.sel1;
+		var sel2 = document.all.sel2;
+		
+		
+		for(var i=0; i<sel2.options.length;i++){
+			
+			var selOp = sel2.options[i];
+			var newOp = new Option();
+			
+			newOp.value = selOp.value;
+			newOp.text = selOp.text;
+			
+			sel1.options.add(newOp);
+			
+		}
+		
+		var num = sel2.options.length;
+		
+		for(var i=0; i<num; i++) {
+			
+			sel2.options.remove(sel2.options);
+			
+		}
+		
+	}
+
+</script>
+</head>
+<body>
+	<!--  -->
+	
+	
+	<table>
+		<tr>
+			<td>
+				<select name="sel1" size="10">
+					<option value="1">김형민</option>
+					<option value="2">문현호</option>
+					<option value="3">안지현</option>
+					<option value="4">정필립</option>
+					<option value="5">최동진</option>
+					<option value="6">한영진</option>
+				</select>
+			</td>
+			<td>
+				<input type="button" value="Add >" onclick="add()"/><br>
+				<input type="button" value="< Remove" onclick="remove()"/><br>
+				<input type="button" value="Add All >>" onclick="addAll()"/><br>
+				<input type="button" value="<< Remove All" onclick="removeAll()"/>
+			</td>
+			<td>
+				<select name="sel2" size="10">
+				</select>
+			</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#timer {
+		border: 1px solid gray;
+		width: 475px;
+		margin: 50px auto 20px auto;
+		padding: 5px;
+	}
+	#timer:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	#timer input, #timer span {
+		float: left;
+		font-size: 7em;
+	}
+	#timer input {
+		width: 130px;
+		border: 0px;
+		outline: none;
+	}
+	#timer span {
+		margin-top: 0px;
+	}
+	#btns {
+		width: 440px;
+		margin: 20px auto;
+		text-align: center;
+	}
+	#btns input {
+		border: 1px solid #aaa;
+		background-color: white;
+		width: 30%;
+		height: 50px;
+		outline: none;
+		cursor: pointer;
+	}
+	#btns input:disabled {
+		background-color: #eee;
+		cursor: not-allowed;
+	}
+	
+
+
+</style>
+<script src="/WebClientTest/javascript/js/cookie.js" type="text/javascript"></script>
+<script>
+
+	var start,stop,reset;
+	
+	var timer=0;
+	
+	window.onload = function() {
+	
+		init();
+		
+		start = document.all.start;
+		stop = document.all.stop;
+		reset = document.all.reset;
+		
+		start.onclick = function(){
+			
+		}
+		
+		
+		
+		reset.onclick = function(){
+			
+			init();
+			
+		}
+		
+		
+		
+	}
+	
+	function = init(){
+		hour.value = "00";
+		minute.value = "00";
+		second.value = "00";
+	}
+
+
+</script>
+</head>
+<body>
+	<!-- example08.htm -->
+	
+	<div id="timer">
+		<input type="text" name="hour"/>
+		<span>:</span>
+		<input type="text" name="minute"/>
+		<span>:</span>
+		<input type="text" name="second"/>
+	</div>
+	
+	<div id="btns">
+		<input type="button" value="시작" name="start" />
+		<input type="button" value="멈춤" name="stop" />
+		<input type="button" value="종료" name="reset" />
+	</div>
+	
+</body>
+</html>

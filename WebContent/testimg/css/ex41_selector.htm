@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+	/*  
+	
+	전후 선택자
+	1. :before
+	2. :after
+	
+	전후 선택자에서 사용하는 추가 키워드
+	1. none
+	2. 문자열
+	3. attr(속성)
+	4. open-quote
+	5. close-quote
+	
+	*/
+	
+	#p1 {
+		line-height: 1.6em;
+	}
+	
+	#p1 span {
+		color: tomato;
+	}
+	
+	#p1 span:before {
+		/* content: "중요!! ["; */
+		/* content: "<b>"; */
+		content: open-quote;
+	}
+	
+	#p1 span:after {
+		/* content: "]"; */
+		/* content: "</b>"; */
+		content: close-quote;
+	}
+	
+	a {
+		text-decoration: none;
+	}
+	
+	a:after {
+		content: "(" attr(href) ")";
+	}
+	
+	
+	
+	.tistory {
+		width: 90%;	
+		font-weight: bold;
+		background-color: #D8D8D8;
+		border-left: 10px solid #FF8224;	
+		border-righht: 10px solid #FF8224;
+		margin: 1.5em 10px;	
+		padding: 0.5em 10px;
+		quotes:"\201C""\201D""\2018""\2019";
+	}
+	.tistory:before {
+		color: #FF8224;	
+		content: open-quote;	
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;		
+	}
+	.tistory:after {
+		color: #FF8224;	
+		content: close-quote;	
+		font-size: 4em;
+		line-height: 0.1em;
+		vertical-align: -0.4em;		
+	}
+	
+	
+	
+	#cb1:checked + label:before {
+		content: "추가 삽입";
+	}
+	#cb1:checked + label:after {
+		content: "!!!!";
+	}
+	
+	
+</style>
+</head>
+<body>
+	<!-- ex41_selector.htm -->
+	
+	<p id="p1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor aliquam cum ea alias temporibus dicta ducimus <a href="http://google.com">구글</a> animi magni dolore id voluptatibus sint fuga harum illo voluptates labore delectus. <span>Quibusdam</span> deleniti quisquam sapiente blanditiis minus explicabo possimus impedit perspiciatis ea doloremque quos neque <span>recusandae</span> quas quam maiores voluptate minima iure <span>corrupti</span> dolores beatae vero voluptatem animi eveniet. Nobis unde veritatis atque aperiam asperiores ipsum amet voluptatem temporibus ea cumque modi <a href="http://naver.com">네이버</a> reprehenderit quod voluptates ipsam <span>praesentium.</span> Labore laboriosam autem qui temporibus officia maxime dolores quisquam velit tempora corrupti esse numquam rem nam nesciunt modi distinctio pariatur minima explicabo <span>perspiciatis</span> natus. Ipsam veritatis.</p>
+	
+	<hr>
+	
+	<blockquote class="tistory">홍길동 왈. 자바공부를 열심히 하세요.</blockquote>
+	
+	<hr>
+	
+	<table>
+		<tr>
+			<td>테이블</td>
+		</tr>
+	</table>
+	
+	<input type="checkbox" id="cb1"><label for="cb1">체크박스</label>
+	
+	
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script src="/WebClientTest/javascript/js/cookie.js" type="text/javascript"></script>
+<script>
+
+	var btn1,btn2;
+
+	window.onload = function() {
+	
+		btn1 = document.all.btn1;
+		btn2 = document.all.btn2;
+		
+		/*  
+		
+		쿠키, Cookie
+		
+		- 브라우저가 관리하는 데이터 저장소 중 하나(가장 오래된 저장)
+		- 사용 용도
+		- 데이터 형식 > 텍스트 포맷을 저장 > 자료형 Ⅹ, 문자열 ○
+		- 숫자, 문자열 등 저장 ○, 복잡한 객체 저장 Ⅹ
+		- 최대 용량 제한(4KB)
+		- 사이트 전역 데이터 + 개인데이터
+			a. 개인 데이터
+				- 다른 사람이 열람 불가능
+			b. 전역 데이터
+				1. 웹페이지는 기본적으로 자원 관리의 최대 영역이 페이지 단위이다.
+					- 전역 변수의 영역 == 한 페이지
+				2. 페이지 -> (데이터 전달) -> 페이지
+					a. submit()
+					b. cookie()
+		
+		*/
+		
+		btn1.onclick = function() {
+			
+			//쿠키저장
+			//document.cookie = "cookie";
+			//document.cookie = 20;
+			//document.cookie = "name=cookie&num=20";
+			setCookie("name","hong"); //name=hong
+			setCookie("num","20");
+			setCookie("id","lee");
+			
+		};//쿠키저장하기
+		
+		
+		btn2.onclick = function() {
+			
+			//쿠키읽기
+			//alert(document.cookie);
+			alert(getCookie("name"));
+			alert(getCookie("num"));
+			alert(getCookie("id"));
+			
+			
+		}//쿠키불러오기
+		
+	};
+
+</script>
+</head>
+<body>
+	
+	<!-- ex28_cookie.htm -->
+	
+	<input type="button" value="쿠키 저장하기" name="btn1" />
+	<input type="button" value="쿠키 불러오기" name="btn2" />
+	
+</body>
+</html>

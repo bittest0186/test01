@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	img {
+		border: 10px solid #ccc;
+		margin: 10px;
+	}
+
+	#wrap {
+		position:absolute;
+		top:10%;
+		left:50%;
+		transform: translateX(-50%);
+	}
+	
+	input {
+		width:200px;
+		height: 50px;
+		margin: 0px auot;
+	}
+
+</style>
+<script>
+
+	window.onload = function() {
+	
+		
+		
+	};
+	
+	function image2() {
+		
+		
+		//alert(document.images["icon01"].src);
+		
+		//alert(event.srcElement.src);
+		
+		event.srcElement.src = "../images/rect_icon10.png";
+		
+	};
+
+	function reset() {
+		
+		for(var i=0; i<10; i++) {
+			document.images[i].src = "../images/rect_icon0"+(i+1)+".png";			
+		}
+	
+			
+	}
+	
+	
+	function input() {
+		
+		var src2 = "http://localhost:8090/WebClientTest/images/";
+		
+		if(document.images["1"].src =="http://localhost:8090/WebClientTest/images/rect_icon02.png") {
+			location.href = "http://naver.com";
+		} else {
+			alert(document.images["9"].src);
+			alert("error!");
+			reset().click;
+		}
+		/* 
+		
+		&& document.images["4"].src == src2
+				&& document.images["7"].src == src2 && document.images["8"].src == src2
+				&& document.images["9"].src == src2
+		
+		 */
+		
+	}
+
+</script>
+</head>
+<body>
+	<!--  -->
+	
+	<div id="wrap">
+	
+		<div>
+			<img src="../images/rect_icon01.png" name="1" onmouseover="image2();"/>
+			
+			<img src="../images/rect_icon02.png" name="2" onmouseover="image2();"/>
+	
+			<img src="../images/rect_icon03.png" name="3" onmouseover="image2();"/>
+		</div>
+		<div>
+			<img src="../images/rect_icon04.png" name="4" onmouseover="image2();"/>
+		
+			<img src="../images/rect_icon05.png" name="5" onmouseover="image2();"/>
+			
+			<img src="../images/rect_icon06.png" name="6" onmouseover="image2();"/>
+		</div>
+		<div>
+			<img src="../images/rect_icon07.png" name="7" onmouseover="image2();"/>
+			
+			<img src="../images/rect_icon08.png" name="8" onmouseover="image2();"/>
+			
+			<img src="../images/rect_icon09.png" name="9" onmouseover="image2();"/>
+		</div>
+		
+		<div>
+			<input type="button" value="Result" name="result" onclick="reset();">
+			<input type="button" value="Input" name="input" onclick="input();">
+		</div>
+	
+	</div>
+	
+</body>
+</html>

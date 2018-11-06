@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	
+	/*  
+	float
+	- 기존 출력 형태를 깨고, 기존의 위치에서 벗어나 원래 라인의 좌측 끝이나 우측 끝으로 이동해라
+	*/
+	#pic {
+		float: left;
+		margin: 20px 10px;
+	}
+	
+	#word {
+		color: red;
+		font-weight: bold;
+		float: right;
+	}
+	
+	h1, p {
+		width: 600px;
+	}
+	
+	h1 {
+		border-bottom: 1px solid gray;
+		text-align: left;
+		/* border: 1px solid red; */
+	}
+	
+	h1 > span {
+		font-size: 14px;
+		font-weight: normal;
+		/* border: 0px solid red;
+		text-align: right;
+		display: inline-block;
+		width: 430px; */
+		float: right;
+		margin-top: 20px;
+	}	
+	
+	/* 
+	블럭 태그를 가로로 배치
+	1. display : inline(inline-block) 
+	2. float : left(right) *******
+	*/
+	
+	.box {
+		border: 5px solid gray;
+		width: 100px;
+		height: 100px;
+		float: left;
+	}
+	
+	#box1 { background-color: red; }
+	#box2 { background-color: orange; }
+	#box3 { background-color: yellow; }
+	#box4 { background-color: green; }
+	#box5 { background-color: blue; }
+	
+	
+	
+	#pet > img {
+		border: 1px solid black;
+		float: left;
+	}
+	
+	
+</style>
+</head>
+<body>
+	<!-- ex24_float.htm -->
+	
+	<h1>회사 소개 <span>관리자에게 연락하기</span></h1>
+	
+	<p>
+		<img src="../images/man_01.png" id="pic">
+		인사청문특위는 민주당 추천 김기영 후보자에 대한 보고서에서 일부 청문위원의 의견이라며 "5차례에 걸친 위장전입 등으로 현 정부의 '고위공직자 배제 7대원칙'에 비춰 부적격 사유에 해당될 수 있다", "현 대법원장과의 친분으로 인해 코드인사라는 비판에서 자유롭지 못하다"는 등의 내용을 언급했다.
+이어 보고서 뒷부분에서는 다른 일부 청문위원의 의견이라며 "자녀의 교육이나 재산관리는 통상 배우자가 관리하는 경우가 많다", "현 대법원장과 개인적인 친분으로 인한 인사라는 주장은 명확지 않다" 같은 후보자의 해명을 담았다.인사청문특위는 민주당 추천 김기영 후보자에 대한 보고서에서 일부 청문위원의 의견이라며 "5차례에 걸친 위장전입 등으로 현 정부의 '고위공직자 배제 7대원칙'에 비춰 부적격 사유에 해당될 수 있다", "현 대법원장과의 친분으로 인해 코드인사라는 비판에서 자유롭지 못하다"는 등의 내용을 언급했다.
+이어 보고서 뒷부분에서는 다른 일부 청문위원의 의견이라며 "자녀의 교육이나 재산관리는 통상 배우자가 관리하는 경우가 많다", <span id="word">홍길동</span> "현 대법원장과 개인적인 친분으로 인한 인사라는 주장은 명확지 않다" 같은 후보자의 해명을 담았다.인사청문특위는 민주당 추천 김기영 후보자에 대한 보고서에서 일부 청문위원의 의견이라며 "5차례에 걸친 위장전입 등으로 현 정부의 '고위공직자 배제 7대원칙'에 비춰 부적격 사유에 해당될 수 있다", "현 대법원장과의 친분으로 인해 코드인사라는 비판에서 자유롭지 못하다"는 등의 내용을 언급했다.
+이어 보고서 뒷부분에서는 다른 일부 청문위원의 의견이라며 "자녀의 교육이나 재산관리는 통상 배우자가 관리하는 경우가 많다", "현 대법원장과 개인적인 친분으로 인한 인사라는 주장은 명확지 않다" 같은 후보자의 해명을 담았다.
+	</p>
+	
+	<h1>상자(float 사용이 가장 많음)</h1>
+
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4" class="box">상자4</div>
+	<div id="box5" class="box">상자5</div>
+	<div style="clear:both;"></div>
+	
+	<p>다른 내용입니다.</p>
+	
+	<h1>애완동물</h1>
+	
+	<div id="pet">
+		<img src="../images/cat01.jpg">
+		<img src="../images/dog01.jpg">
+		<img src="../images/cat02.jpg">
+		<img src="../images/dog02.jpg">
+		<img src="../images/cat03.jpg">
+		<div style="clear:both;"></div>
+	</div>
+	
+	
+	<div>추가 내용입니다.</div>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

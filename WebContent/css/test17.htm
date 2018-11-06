@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#box {
+		width: 700px;
+		height: 100px;
+		border: 10px solid black;
+	}
+	
+	.box {
+		width: 100px;
+		height: 100px;
+		border: 0px;
+		float: left;
+		top:0px;
+		left: 0px;
+		transition:all 1s;
+		position: relative;
+	}
+	
+	
+	#box:after {
+		clear: both;
+	}
+	
+	
+	#box:hover .box {
+		transform:translate(0px,0px);
+	}
+	
+	#b1{
+		background-color: red;
+		z-index: 7;
+	}
+	
+	#b2{
+		background-color: orange;
+		transform:translate(-100px,0px);
+		z-index:6;
+	}
+	
+	#b3{
+		background-color: yellow;
+		transform:translate(-200px,0px);
+		z-index:5;
+	}
+	
+	#b4{
+		background-color: green;
+		transform:translate(-300px,0px);
+		z-index:4;
+	}
+	
+	#b5{
+		background-color: blue;
+		transform:translate(-400px,0px);
+		z-index:3;
+	}
+	
+	#b6{
+		background-color: indigo;
+		transform:translate(-500px,0px);
+		z-index:2;
+	}
+	
+	#b7{
+		background-color: violet;
+		transform:translate(-600px,0px);
+		z-index:1;
+	}
+
+</style>
+</head>
+<body>
+	<!-- test17.htm -->
+	
+	
+	<div id="box">
+		<div id="b1" class="box"></div>
+		<div id="b2" class="box"></div>
+		<div id="b3" class="box"></div>
+		<div id="b4" class="box"></div>
+		<div id="b5" class="box"></div>
+		<div id="b6" class="box"></div>
+		<div id="b7" class="box"></div>
+	</div>
+	
+</body>
+</html>

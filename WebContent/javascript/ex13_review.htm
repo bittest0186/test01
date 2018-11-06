@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+</script>
+</head>
+<body>
+	<!-- ex13_review.htm -->
+	
+	<!--
+	
+	CSS 동작 순서
+	
+	1. 이벤트 추가
+		a. 특정 태그 검색
+			- 이벤트를 걸고 싶은 태그 검색
+			- BOM 사용 (ex] window.document.form1.btn1)
+			- DOM 사용 (ex] document.getElementById("btn1))
+		b. onⅩⅩⅩ매핑(Event Mapping)
+	2. 이벤트 핸들러(이벤트에 거린 실행 함수)
+		a. 특정 태그 검색
+			- 조작을 하고 싶은 태그 검색
+			- BOM 사용
+			- DOM 사용
+		b. 속성(PCDATA)을 조작
+			- HTML이 제공하는 속성명을 그대로 자바스크립트에서도 프로퍼티로 제공한다.
+		
+	
+	-->
+	
+	<form name="form1">
+		<input type="text" name="txt1" /><br />
+		<input type="button" value="버튼1" name="btn1" />
+		<input type="button" value="버튼2" name="btn2"
+		onclick="test();"
+		/>
+	</form>
+	
+	
+	<script>
+		//BOM 도구 -> 1.a 이벤트 걸고 싶은 태그 검색
+		//			  1.b 원하는 종류의 이벤트 추가
+		window.document.form1.btn1.onclick = function() {
+			//console.log(1+1);
+			
+			var now = new Date();
+			
+			//출력
+			//2.a 조작하고 싶은 태그 검색 + BOM
+			//2.b 조작하고 싶은 태그의 속성 조작
+			window.document.form1.txt1.value = now.toLocaleString();
+			
+			
+		};//window.document.form1.btn1.onclick 동적으로 사용하는것 이 더 편하다
+	
+		function test() {
+			var now = new Date();
+			window.document.form1.txt1.value = now.toLocaleString();
+		}
+		
+		
+	</script>
+	
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script src="/WebClientTest/javascript/js/cookie.js" type="text/javascript"></script>
+<script>
+
+	var btn2;
+
+	window.onload = function() {
+	
+		btn2 = document.all.btn2;
+		
+		btn2.onclick = function() {
+			//alert(num);
+			alert(getCookie("data"));
+		};//btn2
+	};
+
+</script>
+</head>
+<body>
+	<!-- ex29_c.htm -->
+	
+	<h1>세번째 페이지</h1>
+	
+	<fieldset>
+		<legend>페이지 이동하기</legend>
+		<a href="ex29_a.htm">첫번째 이동하기</a>
+		<a href="ex29_b.htm">두번째 이동하기</a>
+		<a href="ex29_c.htm">세번째 이동하기</a>
+	</fieldset>
+	
+	
+	<fieldset>
+		<input type="button" value="불러오기" name="btn2" />
+	</fieldset>
+	
+</body>
+</html>

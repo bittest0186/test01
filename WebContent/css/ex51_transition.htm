@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+	#txt {
+		width: 400px;
+		padding: 15px;
+		border-width: 1px;
+		margin: 15px 5px;
+		/* opacity: 0; */
+		transition: all 1s;
+		/* height: 0px; */
+		overflow: hidden;
+		transform: scale(0, 0) rotate(0deg);
+		opacity: 0;
+	}
+	
+	#cb1:checked + label + #txt {
+		/* opacity: 1; */
+		/* padding: 15px;
+		border-width: 1px;
+		height: 350px; */
+		transform: scale(1, 1) rotate(3600deg);
+		opacity: 1;
+	}
+	
+	
+	body { padding-bottom: 300px; }
+	
+	.switch {
+		border: 20px solid #A9A9A9;
+		width: 252px;
+		transform: scale(1,1);
+	}
+	
+	.switch > input {
+		display: none;
+	}
+	
+	.switch > label {
+		width: 126px;
+		height: 126px;
+		display: block;
+		background-color: #eee;
+		cursor: pointer;
+		float: left;
+		position: relative;
+		left: 0px; top: 0px;
+		z-index: 2;
+	}
+	
+	/* 
+	.switch > div:hover + img {
+		transform: translate(0px, 0px);
+	} 
+	*/
+	
+	.switch > input:checked + label + img {
+		transform: translate(0px, 0px);
+	}
+	
+	.switch > input:checked + label {
+		background-color: #ccc;
+	}
+	
+	.switch > img {
+		float: left;
+		transform: translate(-126px, 0px);
+		transition: all .6s;
+	}
+	
+	.switch:after {
+		content: " ";
+		display: block;
+		clear: both;
+	}
+	
+	
+	#panel {
+		width: 300px;
+		height: 300px;
+		border: 1px solid black;
+	}
+	
+	#panel > div {
+		width: 100px;
+		height: 66px;
+		background-color: #ddd;
+		float: left;
+		outline: 1px solid gray;
+		text-align: center;
+		padding-top: 34px;
+	}
+	
+	#cat {
+		position: absolute;
+		left: 800px;
+		top: 600px;
+		transition: all 1s;
+	}
+	
+	#panel > div:nth-child(2):hover ~ #cat { top: 300px; }
+	#panel > div:nth-child(3):hover ~ #cat { top: 300px; left: 1100px; }
+	#panel > div:nth-child(4):hover ~ #cat { left: 500px; }
+	#panel > div:nth-child(6):hover ~ #cat { left: 1100px; }
+	#panel > div:nth-child(8):hover ~ #cat { top: 900px; }
+	
+	
+	#dog img {
+		transition: all 1s;
+	}
+	
+	#dog img:hover {
+		/* 250 x 188 */
+		border-radius: 50%; 
+	}
+	
+	
+	#menu {
+		border: 10px solid black;
+		width: 126px;
+		height: 126px;
+		overflow: hidden;
+	}
+	
+	#menu:hover > div {
+		transform: translate(-504px, 0px);
+	}
+	
+	#menu > div {
+		border: 0px solid red;
+		width: 630px;
+		transition: all 1s;
+	}
+	
+	#menu > div > img {
+		float: left;
+	}
+	
+	
+	#rbMenu1:checked ~ #menu > div { transform: translate(0px, 0px); }
+	#rbMenu2:checked ~ #menu > div { transform: translate(-126px, 0px); }
+	#rbMenu3:checked ~ #menu > div { transform: translate(-252px, 0px); }
+	#rbMenu4:checked ~ #menu > div { transform: translate(-378px, 0px); }
+	#rbMenu5:checked ~ #menu > div { transform: translate(-504px, 0px); }
+	
+	
+	/* 문제 8번 */
+	#txt2 {
+		width: 300px;
+		height: 250px;
+		margin: 100px 10px;
+		overflow: hidden;
+		padding: 20px;
+		border: 1px solid #A9A9A9;
+	}
+	
+	#txt2 > div {
+		width: 300px;
+		height: 4450px;
+		line-height: 1.4em;
+		transition: transform 5s;
+	}
+	
+	#txt2:hover > div {
+		transform: translate(0px, -4200px);
+	}
+	
+	
+</style>
+</head>
+<body>
+	<!-- ex51_transition.htm -->
+	<input type="checkbox" id="cb1"> <label for="cb1">펼치기/닫기</label>
+	<div id="txt" class="box">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi earum et architecto sapiente eveniet labore. Quam blanditiis pariatur delectus quasi deserunt accusantium molestiae adipisci nihil cumque sed eos ut veritatis quod quas obcaecati reiciendis enim placeat error voluptatem unde amet maiores laboriosam vero saepe voluptate perferendis non. Voluptatum doloribus consectetur laboriosam sequi assumenda totam cupiditate veritatis iure adipisci commodi ad aliquid minima quod sed facilis eveniet sunt! Laudantium tenetur commodi nihil aspernatur quos nesciunt illo asperiores voluptates dolore officia. Mollitia adipisci corrupti architecto nemo cumque! Cum id perspiciatis rerum ab ad debitis blanditiis consequuntur nulla laborum deserunt sed totam reiciendis.</div>
+	
+	<hr>
+	
+	<div class="switch">
+		<input type="checkbox" id="cb2">
+		<label for="cb2"></label>
+		<img src="../images/rect_icon01.png">
+	</div>
+	
+	<hr>
+	
+	<div id="panel">
+		<div></div>
+		<div>상</div>
+		<div></div>
+		<div>좌</div>
+		<div></div>
+		<div>우</div>
+		<div></div>
+		<div>하</div>
+		<div></div>
+		<img src="../images/catty10.png" id="cat">
+	</div>
+	
+	<hr>
+	
+	<div id="dog">
+		<img src="../images/dog01.jpg">
+		<img src="../images/dog02.jpg">
+		<img src="../images/dog03.jpg">
+		<img src="../images/dog04.jpg">
+		<img src="../images/dog05.jpg">
+	</div>
+	
+	
+	
+
+	<input type="radio" name="rbMenu" id="rbMenu1" checked> <label for="rbMenu1">헤드폰</label>
+	<input type="radio" name="rbMenu" id="rbMenu2"> <label for="rbMenu2">쇼파</label>
+	<input type="radio" name="rbMenu" id="rbMenu3"> <label for="rbMenu3">집</label>
+	<input type="radio" name="rbMenu" id="rbMenu4"> <label for="rbMenu4">통화중</label>
+	<input type="radio" name="rbMenu" id="rbMenu5"> <label for="rbMenu5">전화기</label>
+
+	<div id="menu">
+		<div>
+			<img src="../images/rect_icon01.png">
+			<img src="../images/rect_icon02.png">
+			<img src="../images/rect_icon03.png">
+			<img src="../images/rect_icon04.png">
+			<img src="../images/rect_icon05.png">
+		</div>
+	</div>
+	
+	
+	<div id="txt2">
+		<div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti ea excepturi cumque quam in enim ipsam corrupti incidunt rem aut! Eum quisquam porro numquam quae fugiat tempora minima iure debitis laborum ratione eos nesciunt labore reiciendis. Unde hic distinctio porro iste eius doloremque quaerat illum saepe doloribus repellendus corporis vel praesentium rerum sequi voluptatum minima odit esse blanditiis voluptates deserunt ipsum rem tempore ea in consectetur corrupti cum facere. Ipsam minus ut perferendis iure cumque nostrum totam illo ad sint ex aut repellendus laboriosam enim dolores ipsa eos quibusdam debitis maiores eaque consequatur voluptatem similique eligendi repellat a delectus commodi non doloribus porro corrupti sit! Enim odit labore minus similique dolor voluptas reiciendis impedit praesentium quos fugiat rerum consequatur at modi eum unde sed nulla optio tempore provident beatae ab quam sit architecto nemo nisi. Placeat reiciendis consequatur enim illum deleniti fugiat voluptatum blanditiis fugit velit molestias quasi provident rerum magnam quos dignissimos! Ea blanditiis porro iure magni odit libero molestiae sint vitae praesentium quaerat velit consequuntur quam dignissimos quidem a molestias aperiam sunt in cum aliquam culpa architecto neque cumque laboriosam quod beatae distinctio similique veritatis fugit. Ut alias magnam voluptatem consequuntur illo adipisci sed porro molestias eum praesentium dignissimos ratione architecto ea voluptatibus fuga animi officia commodi perspiciatis explicabo eligendi fugit autem sunt blanditiis id atque quam placeat dolores ipsam nostrum similique. Sunt soluta fugiat in sint dolores voluptas similique porro expedita delectus animi asperiores ducimus praesentium iure facere labore explicabo saepe libero nam repellendus doloremque! Architecto accusantium aperiam est beatae vero quos nihil aut praesentium laborum aliquam doloribus fuga illo voluptatem ullam rerum quo sapiente dicta illum magnam minima quod eligendi perferendis deserunt veritatis qui sed blanditiis omnis in maxime neque earum pariatur sint voluptate odio similique vel dolorem! Quas neque impedit dolore asperiores at est expedita obcaecati sit a consequuntur debitis quisquam doloribus eum reprehenderit unde fugit blanditiis commodi animi quidem voluptatem. Esse ducimus dolore perspiciatis quaerat facilis tempore omnis earum at ab nam nostrum unde sed quam cumque soluta veritatis minima voluptatem accusamus error deleniti! Minus aut fuga velit facilis pariatur itaque quasi natus reprehenderit architecto saepe officiis excepturi suscipit ipsa voluptatem vero. Voluptate corporis enim pariatur commodi quam dolorem unde ipsa ad adipisci officiis exercitationem iure nulla voluptatum eaque impedit fuga omnis eos. Ipsa voluptate placeat facere odio quia beatae facilis deserunt et inventore culpa consectetur maiores reprehenderit accusantium qui earum. Soluta officiis necessitatibus veniam voluptas consequatur voluptate neque ut ipsam quod sint veritatis et quibusdam tempore hic quas reprehenderit dolor autem adipisci quidem cumque laborum vitae beatae! Corporis voluptas quasi officiis iure officia architecto illum delectus quod dolorem dignissimos quos omnis provident dicta eos inventore iste culpa laudantium dolor saepe optio vel reprehenderit fuga accusantium molestias cumque autem deleniti cupiditate repellendus eligendi ab totam esse sapiente soluta quae animi similique perferendis est fugiat quia nisi voluptate et incidunt aliquam eum tenetur recusandae! Consectetur vero velit odio quibusdam fuga beatae accusamus quam porro expedita repudiandae eius officia aliquam ipsa. Totam assumenda voluptate eius animi? Animi quidem vero quam beatae sequi maxime id praesentium quis quasi quia repudiandae esse fugit ullam facere eum sed nobis! Sunt dicta eveniet reprehenderit earum porro dolor possimus dolore nam hic iste commodi nihil enim! Ut aspernatur illum atque officia placeat expedita corrupti dolores eaque soluta animi. Commodi magni obcaecati reprehenderit aspernatur illo dolor perferendis alias ducimus accusamus mollitia voluptates placeat vero sequi eos laboriosam itaque tempore non earum consequatur quo deleniti doloremque ipsum dolore explicabo voluptatibus consequuntur dolores fuga. Voluptas optio inventore necessitatibus tenetur numquam excepturi veniam pariatur officiis neque enim aut tempora assumenda alias perferendis nulla quaerat animi nemo esse quidem voluptatibus quas expedita quae sit in accusantium! Architecto necessitatibus praesentium voluptatem vero inventore ipsum animi numquam delectus ipsa laboriosam explicabo voluptas tempore laudantium ipsam magni doloremque dolore. Iusto itaque tenetur eius fugiat velit. Voluptatem similique accusantium est aliquid dolore necessitatibus saepe dicta dignissimos voluptas sapiente odit hic beatae deleniti dolorum quisquam eos quae distinctio laboriosam asperiores quia molestiae illum soluta. Enim totam minus quaerat accusamus deserunt ullam doloribus quo a saepe ipsum ab tempora adipisci maiores corporis dolorum modi nam possimus. Quam veniam repudiandae accusantium soluta quibusdam maxime harum aut. At blanditiis a facilis cumque quibusdam id officia tempora iste sequi molestiae suscipit pariatur sit omnis dolor mollitia laborum labore nam. Fuga repellendus esse ab pariatur architecto sunt omnis maxime aspernatur voluptatem nesciunt quasi amet ratione? Nostrum laudantium officia odit distinctio nemo dignissimos sunt ducimus cumque amet ipsa. Atque accusantium nihil minus sint nobis dolor nesciunt blanditiis quis neque enim. Dolorem accusantium minima laudantium error repellendus sed quos esse non eligendi eius ut eveniet nulla nemo omnis fugit magnam alias reprehenderit saepe. Tenetur provident odio iusto enim debitis ducimus facere saepe accusamus fuga ratione at sapiente sit cupiditate nulla delectus voluptatibus natus laudantium molestiae perferendis consequuntur numquam ipsa minus aut! Debitis fuga accusantium magnam aliquam voluptate ut recusandae voluptatem ipsum repellendus maxime quae aliquid harum commodi natus vitae non nihil earum deleniti dolorem temporibus. Praesentium nesciunt obcaecati nemo vel quo perspiciatis sequi eum nulla temporibus illo? Amet temporibus quae sed qui rem tempora veniam exercitationem nihil cum ea distinctio suscipit consequatur eveniet voluptate facilis facere minus itaque praesentium officiis vero fugit aut nobis iste soluta quaerat quisquam odio et! Soluta quaerat sit error architecto sint nam neque fugiat nemo recusandae eaque tempora blanditiis culpa id animi rem temporibus veritatis. Corrupti ad excepturi magnam maiores provident necessitatibus voluptas odio! Sint enim quam magni doloremque maiores ipsam nesciunt fuga possimus vel nisi earum nulla expedita laborum aliquid quod totam at ea ex vero minus placeat illum commodi eum adipisci sed quo pariatur. Corrupti temporibus alias sed quisquam odio hic sint expedita veritatis voluptatum libero consequuntur neque ad asperiores doloremque minima. Voluptatibus ducimus nesciunt eveniet magnam ex iure aliquam repellat! Quas asperiores beatae quos quod accusamus. Provident quos officia earum fugiat delectus possimus consectetur vel animi nesciunt iste odit libero. Necessitatibus id repellendus quae odio iure eaque nam laboriosam officiis aliquam libero voluptates ad rem quia praesentium blanditiis nobis qui.
+		</div>
+	</div>
+	
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

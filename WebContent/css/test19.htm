@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#main{
+		width: 1260px;
+		height: 630px;
+		border: 10px solid black;
+		position: relative;
+	}
+	
+	#main .icon {
+		
+		position: absolute;
+		left: 0px;
+		top: 0px;
+		border:0px;
+	}
+	
+	
+	#main:hover > .icon {
+		animation-name: start;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function: linear;
+		animation-duration: 5s;
+	}
+	
+	
+	
+	@keyframes start {
+		0% { left: 0px; top: 0px; }
+		20% { left: 1134px; top: 0px; opacity: 1;}
+		22% { left: 1134px; top: 126px; opacity: 1;}
+		40% { left: 0px; top: 126px; opacity: 0.3;}
+		42% { left: 0px; top: 252px; opacity: 0.0;}
+		60% { left: 1134px; top: 252px; opacity: 0;}
+		62% { left: 1134px; top: 378px;opacity: 0.0;}
+		80% { left: 0px; top: 378px; opacity: 0.3;}
+		82% { left: 0px; top: 504px;opacity: 1;}
+		100%{ left: 1134px; top: 504px; opacity: 1;}
+
+
+		 
+	}
+	
+	#icon1{
+		animation-delay: 0s;
+		z-index: 10;
+	}
+	
+	#icon2{
+		/* transform:translate(-126px,0px); */
+		animation-delay: .1s;
+		z-index: 9;
+	}
+	
+	#icon3{
+		/* transform:translate(-252px,0px); */
+		animation-delay: .2s;
+		z-index: 8;
+	}
+	
+	#icon4{
+		/* transform:translate(-378px,0px); */
+		animation-delay: .3s;
+		z-index: 7;
+	}
+	
+	#icon5{
+		/* transform:translate(-504px,0px); */
+		animation-delay: .4s;
+		z-index: 6;
+	}
+	
+	#icon6{
+		/* transform:translate(-630px,0px); */
+		animation-delay: .5s;
+		z-index: 5;
+	}
+	
+	#icon7{
+		/* transform:translate(-756px,0px); */
+		animation-delay: .6s;
+		z-index: 4;
+	}
+	
+	#icon8{
+		/* transform:translate(-882px,0px); */
+		animation-delay: .7s;
+		z-index: 3;
+	}
+	
+	#icon9{
+		/* transform:translate(-1008px,0px); */
+		animation-delay: .8s;
+		z-index: 2;
+	}
+	
+	#icon10{
+		/* transform:translate(-1134px,0px); */
+		animation-delay: .9s;
+		z-index: 1;
+	}
+	
+	
+	
+
+</style>
+</head>
+<body>
+	<!-- test19.htm -->
+	
+	<div id="main">
+		<img src="../images/rect_icon01.png" alt="" id="icon1" class="icon" />
+		<img src="../images/rect_icon02.png" alt="" id="icon2" class="icon" />
+		<img src="../images/rect_icon03.png" alt="" id="icon3" class="icon" />
+		<img src="../images/rect_icon04.png" alt="" id="icon4" class="icon" />
+		<img src="../images/rect_icon05.png" alt="" id="icon5" class="icon" />
+		<img src="../images/rect_icon06.png" alt="" id="icon6" class="icon" />
+		<img src="../images/rect_icon07.png" alt="" id="icon7" class="icon" />
+		<img src="../images/rect_icon08.png" alt="" id="icon8" class="icon" />
+		<img src="../images/rect_icon09.png" alt="" id="icon9" class="icon" />
+		<img src="../images/rect_icon10.png" alt="" id="icon10" class="icon" />
+	</div>
+	
+</body>
+</html>

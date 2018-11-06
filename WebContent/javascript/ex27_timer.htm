@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	form input{
+		display: block;
+		margin-bottom: 10px;
+	}
+
+</style>
+<script>
+
+	var btn1,txt1;
+	var n=1;
+	var btn2;
+	
+	var btn3,btn4,txt2;
+	
+	var btn5,index = 0;
+	var color = ["red","orange","yellow","green","blue"];
+	
+	var timer=0;
+	
+	var cat;
+
+	window.onload = function() {
+	
+		btn1 = document.form1.btn1;
+		txt1 = document.form1.txt1;
+		
+		btn2 = document.form1.btn2;
+		
+		txt2 = document.form1.txt2;
+		btn3 = document.form1.btn3;
+		btn4 = document.form1.btn4;
+		
+		btn5 = document.form1.btn5;
+		
+		cat = document.images["cat"];
+		
+		btn1.onclick = function(){
+			
+			//타이머 함수
+			//1.window.setTimeout(함수, 시간)
+			//	- (시간)ms
+			//	- 1회성
+			
+			//2.window.setInterval(함수, 시간)
+			//	- 무한반복
+			
+			//setTimeout("alert('test');",3000); //3초
+			//setTimeout("test();",3000); //오래된 코드
+			//setTimeout(test,3000); // 요즘(실명 함수 호출)
+			//setTimeout(function() {
+			//	alert("test2");
+			//},5000); // 요즘(실명 함수 호출)
+			
+// 			setInterval(function(){
+// 				alert("test3");
+// 			},3000); // 3초마다 실행
+			
+// 			setTimeout(function(){
+// 				location.href("http://naver.com");
+// 			},10000);
+			
+// 			setInterval(function() {
+// 				txt1.value = (new Date()).toLocaleTimeString();
+// 			},1000);
+			
+			
+			setInterval(function(){
+				txt1.value=n;
+				n++;
+			},1000);
+			
+		};//btn1.onclick
+		
+		
+		
+		
+		btn2.onclick = function() {
+			
+			//alert(txt1.size);
+			//for(var i=20; i<200; i++){
+			//	txt1.size;
+			//}
+			
+			//incSize();
+			setInterval(function(){
+				//txt1.size += 1;
+				window.moveBy(1,1); // 크롬 지원Ⅹ
+			},100);
+			
+		};//btn2.onclick
+		
+		
+		btn3.onclick = function() {
+			if(timer==0) {
+				timer = setInterval(function() {
+					txt2.value = n;
+					n++;
+				},100);
+				console.log(timer);
+			}
+		};//시작버튼
+		
+		btn4.onclick = function() {
+			//setInterval <-> clearInterval
+			//setTimeout <-> clearTimeout
+			clearInterval(timer);
+			timer=0;
+			
+		};//멈춤버튼
+		
+		
+		btn5.onclick = function() {
+			
+			/* 
+			for(var i=0; i<10000000; i++){
+				document.body.bgColor = color[index];
+				index++;
+				if(index>= color.length) index =0;
+			}
+			 */
+			 
+			 setInterval(function(){
+						document.body.bgColor = color[index];
+						index++;
+						if(index>= color.length) index =0;
+			 },100);
+			 
+		};//btn5
+		
+		
+		n=1;
+		timer=0;
+		
+		cat.onclick = function() {
+			if(timer ==0) {
+				timer = setInterval(function(){
+					cat.src = "../images/catty0" + n + ".png";
+					n++;
+					if(n > 9) {
+						n=1;
+					}
+				},100);
+			} else {
+				clearInterval(timer);
+				timer=0;
+			}
+			
+		};//cat
+		
+		
+	};//window.onload
+	
+	function incSize(){
+		setTimeout(function() {
+			txt1.size += 1;	
+			incSize();
+		},100);
+	}
+	
+	function test() {
+		alert('test');
+	}
+
+</script>
+</head>
+<body>
+	<!-- ex27_timer.htm -->
+	
+	<form name="form1">
+		
+		<input type="text" name="txt1"/>
+		<input type="button" value="테스트" name="btn1"/>
+		<input type="button" value="테스트" name="btn2"/>
+	
+		<input type="text" name="txt2" style="text-align:right;"/>
+		<input type="button" value="시작" name="btn3"/>
+		<input type="button" value="멈춤" name="btn4"/>
+		
+		
+		<hr />
+		
+		<input type="button" value="테스트" name="btn5"/>
+		
+		<hr />
+		
+		<img src="../images/catty01.png" name="cat" />
+	
+	
+	</form>
+	
+</body>
+</html>

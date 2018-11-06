@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+	window.onload = function() {
+	
+	};//onload
+	
+	
+	window.onmousedown = function() {
+		
+		var x = event.clientX;
+		var y = event.clientY;
+		
+		var box = document.createElement("div");
+		//box.class = "box";
+		box.className = "box medium";
+		box.style.position = "absolute";
+		box.style.left = x - 100 + "px";
+		box.style.top = y - 100 + "px";
+		
+		
+		var r = parseInt(Math.random() * 128) + 128; //0 ~ 255
+		var g = parseInt(Math.random() * 128) + 128; 
+		var b = parseInt(Math.random() * 128) + 128; 
+		var a = Math.random();
+		
+		box.style.backgroundColor = "rgba(" + r + "," + g + "," + b + "," + a +")";
+		//box.style.borderWidth = parsInt(Math.random() * 30) + 1 + "px";
+		
+		
+		document.body.appendChild(box);
+		
+		
+		
+	};//onmousedown
+
+</script>
+</head>
+<body>
+	<!-- ex42_style.htm -->
+</body>
+</html>

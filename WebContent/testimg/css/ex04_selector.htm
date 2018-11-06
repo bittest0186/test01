@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<style>
+	/* div { color: blue; } */
+	
+	/* p#test1 { color: orange; } */
+	/* #test1 { color: tomato; } */
+	/* *#test1 { color: yellow; } */ /*  *(all) : 모든 태그  */
+	
+	/* * { color: blue; } */ /* 사용 안함 */
+	
+	/* div.item { color: yellow; } */
+	/* *.item { color: red; } */
+	/* .item { color: red; } */ /* 태그와 상관없이 모든 item 클래스를 찾아라 */
+	
+	/*  
+	
+	선택자의 종류
+	1. 태그 선택자
+	2. id 선택자
+	3. class 선택자
+	
+	4. 그룹 선택자
+	- 1 ~ 3번 선택자를 그룹으로 묶어서 일괄 적용
+		
+	*/
+	
+	/* 
+	p { color: blue; }
+	span { color: blue; } 
+	*/
+	
+	/* p, span { color: blue; } */
+	
+	p, .item, #test1 { color: orange; }
+	
+</style>
+</head>
+<body>
+	<!-- ex04_selector.htm -->
+
+	<p>문단입니다.</p>
+	<div class="item">div 태그입니다.</div>
+	<p>문단입니다.</p>
+	<span class="item">span 태그입니다.</span>
+	<div>div 태그입니다.</div>
+	<p id="test1">문단입니다.</p>
+	<span>span 태그입니다.</span>
+	<div class="item">div 태그입니다.</div>
+	<p class="item">문단입니다.</p>
+	<span>span 태그입니다.</span>
+	<p>문단입니다.</p>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

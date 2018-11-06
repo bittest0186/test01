@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#box {
+		width:650px;
+		height:800px;
+		border: 10px solid black;
+	}
+	
+	.ball{
+		width: 50px;
+		height: 50px;
+		border-radius: 50%;
+		border:10px solid black;
+		float:left;
+		margin:0px 10px;
+	}
+	
+	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	#ball1{
+		animation-name: keyBall;
+		animation-duration: 1s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		background-color: #ff0000;
+		animation-timing-function:ease-in;
+	}
+	#ball2{
+		background-color: #FFA500;
+		animation-name: keyBall;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function:ease-in-out;
+	}
+	#ball3{
+		background-color: #FFFF00;
+		animation-name: keyBall;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function:linear;
+	}
+	#ball4{
+		background-color: #008000;
+		animation-name: keyBall;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function:ease-out;
+	}
+	#ball5{
+		background-color: #0000FF;
+		animation-name: keyBall;
+		animation-duration: .5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function:linear;
+	}
+	#ball6{
+		background-color: #4B0082;
+		animation-name: keyBall;
+		animation-duration: 1.5s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function:ease-in-out;
+	}
+	#ball7{
+		background-color: #EE82EE;
+		animation-name: keyBall;
+		animation-duration: 2s;
+		animation-iteration-count: infinite;
+		animation-direction: alternate;
+		animation-timing-function:ease-out;
+	}
+	
+	
+	@keyframes keyBall {
+	 to{transform: translate(0px, 0px);}
+	 from{transform: translate(0px, 730px);}
+    }
+	
+
+</style>
+</head>
+<body>
+	<!-- test15.htm -->
+	
+	
+	<div id="box">
+		<div id="ball1" class="ball"></div>
+		<div id="ball2" class="ball"></div>
+		<div id="ball3" class="ball"></div>
+		<div id="ball4" class="ball"></div>
+		<div id="ball5" class="ball"></div>
+		<div id="ball6" class="ball"></div>
+		<div id="ball7" class="ball"></div>
+	</div>
+	
+	
+</body>
+</html>

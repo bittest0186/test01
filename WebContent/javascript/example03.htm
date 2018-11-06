@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+	
+	div ul{
+		margin-top: 0px;
+	}
+	
+	div ul li {
+		list-style : none;
+		margin-left: -10px;
+		border: 1px solid black;
+		padding : 7px;
+		
+	}
+	
+	input {
+		cursor: pointer;
+	}
+	div {
+		float:left;
+	}
+	
+</style>
+<script>
+
+	window.onload = function() {
+	
+	};
+
+	function change() {
+		images1.src = "../images/" + event.srcElement.name +".jpg";
+		
+	}
+	
+	function big() {
+		
+ 		window.open("../images/"+ event.srcElement.name +"_big.jpg","images1");
+	} 
+	
+	
+</script>
+</head>
+<body>
+	<!-- example03.htm -->
+	
+	<div>
+		<div>
+			<ul>
+				<li><input type="button" value="강아지01" name="dog01" onmouseover="change();" onclick="big();"/></li>
+				<li><input type="button" value="강아지02" name="dog02" onmouseover="change();" onclick="big();"/></li>
+				<li><input type="button" value="강아지03" name="dog03" onmouseover="change();" onclick="big();"/></li>
+				<li><input type="button" value="강아지04" name="dog04" onmouseover="change();" onclick="big();"/></li>
+				<li><input type="button" value="강아지05" name="dog05" onmouseover="change();" onclick="big();"/></li>
+			</ul>
+		</div>
+		<div>
+			<img src="../images/dog01.jpg" name="images1"/>
+		</div>
+	</div>
+	
+</body>
+</html>

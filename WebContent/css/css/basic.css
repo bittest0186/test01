@@ -1,0 +1,81 @@
+/* basic.css */
+
+@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+@import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); .jejugothic * { font-family: 'Jeju Gothic', sans-serif; }
+
+
+body,p,div,span,ul,ol,li,table,th,td,input,textarea,button {
+	font-family: 'Jeju Gothic';
+	color:#444;	
+}
+
+
+.table{
+		border : 1px solid gray;
+		border-collapse: collapse;
+}
+
+
+.table th,.table td{
+		border : 1px solid gray;
+		padding: 4px;
+}
+
+table th {
+	background-color: #eee;
+}
+
+
+.box{
+		border : 1px solid black;
+}
+
+.box.big {
+	
+	width : 300px;
+	height: 300px;
+	
+}
+
+.box.medium{
+	
+	width : 200px;
+	height: 200px;
+	
+}
+
+.box.small{
+	
+	width : 100px;
+	height: 100px;
+
+}
+
+.box.red{
+	background-color: tomato;
+}
+
+.box.blue{
+	background-color: cornflowerblue;
+}
+
+.box.yellow{
+	background-color: #fff766;
+}
+
+.box.green{
+	background-color: lightgreen;
+}
+
+.box.orange{
+	background-color: #e5c361;
+}
+
+
+a{
+	color: black;
+	text-decoration: none;
+
+	}
+
+

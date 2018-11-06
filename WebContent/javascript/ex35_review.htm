@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	div {
+		margin: 10px; padding: 10px;
+	}
+
+</style>
+<script>
+
+	window.onload = function() {
+		
+		
+		
+		//ID 검색
+		document.getElementById("btn1").onclick = function() {
+			
+			//DOM 검색
+			//1. 식별자(절대)
+			//	a. name 속성 : 사용 안함
+			//	b. id 속성
+			//	c. class 속성
+			//	d. 태그명
+			//2. Axis 표현(상대)
+			//	- 자식 노드
+			//	a. firstChild
+			//	b. lastChild
+			//	c. childNodes
+			//	- 부모 노드
+			//	d. parentNode
+			//	- 형제 노드
+			//	e. previouSibling : 형들
+			//	f. nextSibling : 동생들
+			
+			
+			//class 검색
+			//var box = document.getElementsByClassName("box");
+			
+			//태그명 검색
+			//var box = document.getElementsByTagName("div");
+			//alert(box.length);
+			
+			//for(var i=0; i<box.length;i++){
+			//	box[i].onclick = function() {
+					//각각의 박스에 클릭 이벤트를 추가
+					//alert("클릭");
+					//이벤트는 일괄적으로 추가했지만 클릭이벤트 함수내에서는 어떤 버튼이 눌렀는지 구분할 수 있어야 한다.(****)
+					
+					
+					//box[i].innerText : 사용불가!!!!
+			//		alert(event.srcElement.innerText);
+					
+			//	};//box.onclick
+			//}//for
+			
+			
+			//내가 찾고자 하는 <div>의 부모 태그
+			var list = document.getElementById("list2");
+			
+			
+			for(var i=0; i<list.childNodes.length;i++) {
+				
+				list.childNodes[i].onclick = function() {
+					
+					//alert(event.srcElement.innerText);
+					event.srcElement.innerText = "클릭했습니다.";
+					
+				};//list.childNodes[i].onclick
+				
+			}//for
+			
+			
+			
+			var box3 = document.getElementById("box3");
+			
+			
+			//box3 부모
+			//alert(box3.parentNode.id); // list1
+			
+			//BODY
+			//alert(box3.parentNode.parentNode.nodeName);//BODY
+			//alert(box3.parentNode.parentNode.nodeType);//1
+			//alert(box3.parentNode.parentNode.nodeValue);//null
+			
+			//HTML
+			//alert(box3.parentNode.parentNode.parentNode.nodeName);//HTML
+			//alert(box3.parentNode.parentNode.parentNode.nodeType);//1
+			//alert(box3.parentNode.parentNode.parentNode.nodeValue);//null
+			
+			//#document - 문서 객체(루트 태그보다 위에 있는 부모 객체)
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.nodeName);//#document
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.nodeType);//9
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.nodeValue);//null
+			
+			//Error!!! : Uncaught TypeError: Cannot read property 'nodeName' of null
+			//alert(box3.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName);//#document
+			
+			
+			
+			//box3 형
+			//alert(box3.previousSibling.nodeType);
+			//ox3.previousSibling.previousSibling.innerText = "바로 위의 형";
+			
+			box3.nextSibling.nextSibling.innerText="바로 아래의 동생";
+			
+			
+			
+			
+			
+		};//document.getElementById("btn1").onclick
+	};//window.onload
+
+</script>
+</head>
+<body>
+	<!-- ex35_review.htm -->
+	
+	<input type="button" value="테스트" id="btn1"/>
+	
+	<!-- div#box$.box{상자$}*10 -->
+	<div id="list1">
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	<div id="box4" class="box">상자4</div>
+	<div id="box5" class="box">상자5</div>
+	<div id="box6" class="box">상자6</div>
+	<div id="box7" class="box">상자7</div>
+	<div id="box8" class="box">상자8</div>
+	<div id="box9" class="box">상자9</div>
+	<div id="box10" class="box">상자10</div>
+	</div>
+	
+	<div id="list2">
+		<div>Box1</div>
+		<div>Box2</div>
+		<div>Box3</div>
+		<div>Box4</div>
+		<div>Box5</div>
+		<div>Box6</div>
+		<div>Box7</div>
+		<div>Box8</div>
+		<div>Box9</div>
+		<div>Box10</div>
+	</div>
+	
+	
+</body>
+</html>

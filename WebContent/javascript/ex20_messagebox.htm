@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+	var btn1;
+
+	window.onload = function() {
+	
+		btn1 = document.all.btn1;
+		
+		btn1.onclick = function() {
+			
+			//메시지 박스
+			// - 사용자에게 메시지를 전달하는 도구
+			// 1. alert (메시지)
+			// 2. confirm (메시지)
+			// 3. prompt(메시지,초기값)
+			
+			//window.alert("안녕");
+			//window.location.href = "";
+			//window.history.back();
+			//window.event
+			
+			//alert("메시지");
+			
+			
+			//var result = confirm("메시지"); // 확인 & 취소
+			//alert(result);
+			
+			
+			/* if(confirm("정말 삭제하시겠습니까?")) {
+				location.href = "delete.htm";
+			} */
+			
+			
+			//prompt("메시지","초기값");
+			
+			var pw = prompt("암호를 입력하세요");
+			
+			if(pw == "1234"){
+				location.href = "lecture.htm";
+			} else {
+				alert("암호가 틀렸습니다.");
+			}
+			
+		};//btn1.onclick
+		
+		
+	};
+
+</script>
+</head>
+<body>
+	<!--ex20_messagebox.htm  -->
+	
+	<input type="button" name="btn1" value="버튼1" />
+	
+</body>
+</html>

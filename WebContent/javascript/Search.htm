@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+
+	window.onload = function() {
+	
+	
+	
+	};
+	
+	
+	function address() {
+		if(event.srcElement.name == "btn1"){
+			opener.document.all.address1.value="100";
+			opener.document.all.address2.value="200";
+			opener.document.all.address3.value="서울시 동대문구 회기동";
+			window.close();
+		} else if(event.srcElement.name == "btn2"){
+			opener.document.all.address1.value="300";
+			opener.document.all.address2.value="400";
+			opener.document.all.address3.value="서울시 동대문구 휘경동";
+			window.close();
+		} else if(event.srcElement.name == "btn3"){
+			opener.document.all.address1.value="500";
+			opener.document.all.address2.value="600";
+			opener.document.all.address3.value="서울시 동대문구 이문동";
+			window.close();
+		}
+	}
+	
+	
+
+</script>
+</head>
+<body>
+	<!--  -->
+	
+	
+	<input type="button" name="btn1" value="서울시 동대문구 회기동" onclick="address();"/>
+	<input type="button" name="btn2" value="서울시 동대문구 휘경동" onclick="address();"/>
+	<input type="button" name="btn3" value="서울시 동대문구 이문동" onclick="address();"/>
+</body>
+</html>

@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	table {
+		width: 500px;
+	}
+	
+	.box {
+		padding:50px;
+	}
+	
+	
+	#box1{ background-color: yellow; }
+	#box2{ background-color: orange; }
+	#box3{ background-color: cornflowerblue; }
+
+</style>
+<script>
+
+	window.onload = function() {
+	
+		var tbl1 = document.getElementById("tbl1");
+		
+		console.log(tbl1.childNodes.length);
+		console.log(tbl1.firstChild.nodeName);//#text
+		console.log(tbl1.firstChild.nodeType);//3
+
+		console.log(tbl1.lastChild.nodeName);//TBHODY
+		console.log(tbl1.lastChild.nodeType);//1
+		
+		var tbody = tbl1.lastChild;
+		
+		console.log(tbody.childNodes.length);
+		
+		for(var i=0; i<tbody.childNodes.length;i++){
+			
+			//<tr>만 접근
+			if(tbody.childNodes[i].nodeType == 1) {
+				
+				//console.log(tbody.childNodes[i].nodeName);
+				
+				//<tr>에 이벤트 추가
+				// - 이벤트 버블링, Event Bubbling
+				// - 이벤트 터널링, Event Tunneling
+				tbody.childNodes[i].onmouseover = function() {
+					//alert(event.srcElement.nodeName); //TD
+					event.srcElement.parentNode.bgColor = "yellow";//셀의 배경색
+				};
+				
+				tbody.childNodes[i].onmouseout = function() {
+					event.srcElement.parentNode.bgColor = "transparent";
+				};
+				
+				
+				//ex38 수업후
+				tbody.childNodes[i].ondblclick = function() {
+					//<tr>삭제
+					tbody.removeChild(event.srcElement.parentNode);
+				};//ondblclick
+				
+			}
+			
+		}
+		
+		
+		
+	};
+
+</script>
+</head>
+<body>
+	<!-- ex36_event.htm -->
+	
+	
+	<h1>이벤트 버블링(터널링)</h1>
+	
+	<div id="box1" class="box" onclick="alert('할아버지'); event.cancelBubble = true;">
+		<div id="box2" class="box" onclick="alert('아버지'); event.cancelBubble = true;">
+			<div id="box3" class="box" onclick="alert('손자'); event.cancelBubble = true;">상자</div>
+		</div>
+	</div>
+	
+	<h1>테이블</h1>
+	<!-- table#tbl1.table>tr*20>td{item}*5 -->
+	<table id="tbl1" class="table">
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+		<tr>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+			<td>item</td>
+		</tr>
+	</table>
+	
+</body>
+</html>

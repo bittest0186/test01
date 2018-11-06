@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#number2 {
+		width: 1000px;
+		height: 500px;
+	}
+
+</style>
+<script>
+
+	var btn1, box1;
+
+	window.onload = function() {
+	
+		btn1 = document.getElementById("btn1");
+		box1 = document.getElementById("box1");
+		
+		
+		btn1.onclick = function() {
+			
+			//JavaScript -> (제어) -> CSS
+			//	- 태그.style.CSS속성명
+			//	- 태그.style.CSS속성명 = "CSS 속성값";
+			//	- CSS 속성명은 자바스크립트의 식별자로 사용 > 표기법이 어긋나면 표현이 오면 캐멀 표기법으로 변환해서 사용
+			//	- 모든 속성값은 문자열로 넣는다.
+			//	- 자바스크립트로 접근 가능한 CSS의 속성은 인라인 스타일 시트만 가능하다.
+			
+			
+			
+			//console.log(box1.style);
+			//console.log(box1.style.color);
+			//console.log(box1.style["color"]);
+			
+			//box1.style.color = "blue"; // color : blue;
+			//box1.style.fontSize = "3em";
+			//box1.style.backgroundColor = "cornflowerblue";
+			//box1.style.border = "10px dashed yellow";
+			
+			//box1.style.width = "200px";
+			//alert(box1.style.width);
+			
+			//alert(box1.style.width);//없음
+			//alert(box1.style.color);
+			
+			//크기누적
+			//alert(parseInt(box1.style.width) + 20);
+			//box1.style.width = (parseInt(box1.style.width) + 20)+"px";
+			//box1.style.height = (parseInt(box1.style.height) + 20)+"px";
+			
+			
+			//토글 버튼
+			if(box1.style.visibility != "hidden"){
+			box1.style.visibility = "hidden";
+			btn1.value="상자보이기";
+			} else {
+			box1.style.visibility = "visible";
+			btn1.value="상자감추기"				
+			}
+			
+			
+		};//onclick
+		
+		
+		document.getElementById("p1").style.fontSize = "14px";
+		
+	};//onload
+	
+	
+	//전역 키이벤트
+	window.onkeydown = function() {
+		
+		if(event.keyCode >= 48 && event.keyCode <= 57) {
+			
+			//alert(event.keyCode); //48 ~ 57
+			
+			
+			//48 -> 0.png
+			//57 -> 9.png
+			
+			var list = document.getElementById("number").children;
+			
+			if(list[event.keyCode-48].style.visibility != "hidden"){
+			list[event.keyCode-48].style.visibility = "hidden";
+			}else{
+			list[event.keyCode-48].style.visibility = "visible";
+				
+			}//number
+			
+			
+			
+			var number2 = document.getElementById("number2");
+			
+			var n = event.keyCode-48;
+			
+			var img = document.createElement("img");
+			img.setAttribute("src", "../images/" + n + ".png");
+			
+			number2.appendChild(img);
+			
+			
+			//number2를 꽉채웠는지? > 27개
+			if(number2.children.length > 120){
+				for(var i=0; i<number2.children.length; i++){
+					number2.children[i].style.width = "24px";
+				}
+			} else if(number2.children.length > 27){
+				for(var i=0; i<number2.children.length; i++){
+					number2.children[i].style.width = "48px";
+				}
+			} 
+					
+			
+		} else if(event.keyCode == 13){
+			var br = document.createElement("br");
+			
+			var number2 = document.getElementById("number2");
+			number2.appendChild(br);
+		} else if(event.keyCode == 8) {
+			var number2 = document.getElementById("number2");
+			number2.removeChild(number2.lastChild);
+		}
+		
+		
+		
+		
+		
+	};//onkeydown
+	
+	
+	
+	function resize(n) {
+		//alert("n");
+		document.getElementById("p1").style.fontSize = parseInt(document.getElementById("p1").style.fontSize) + n + "px";
+		
+	}
+	
+	
+	function change(family) {
+		//alert("n");
+		document.getElementById("p1").style.fontFamily = family;
+		
+	}
+	
+	
+
+</script>
+</head>
+<body>
+	<!-- ex40_style.htm -->
+	
+	<input type="button" value="버튼1" id="btn1" />
+	<hr>
+	<div id="box1" class="box red medium" style="color:white; width:200px; height: 200px;">상자</div>
+	
+	
+	<hr>
+	
+	<div id="number">
+		<img src="../images/0.png"/>
+		<img src="../images/1.png"/>
+		<img src="../images/2.png"/>
+		<img src="../images/3.png"/>
+		<img src="../images/4.png"/>
+		<img src="../images/5.png"/>
+		<img src="../images/6.png"/>
+		<img src="../images/7.png"/>
+		<img src="../images/8.png"/>
+		<img src="../images/9.png"/>
+	</div>
+	
+	
+	<hr />
+	
+	
+	<div id="number2" class="box">
+	
+	</div>
+	
+	
+	<hr />
+	
+	<h1>미세먼지
+	<small onclick="resize(1);">▲</small>
+	<small onclick="resize(-1);">▼</small>
+	<small onclick="change('나눔고딕');">나눔고딕</small>
+	<small onclick="change('궁서');">궁서</small>
+	<small onclick="change('빙그레체');">빙그레체</small>
+	</h1>
+	<p id="p1">[날씨] 서울 올가을 첫 초미세먼지주의보…공기질 비상
+
+[앵커] 
+
+나흘째 공기가 많이 탁합니다. 
+
+인천과 경기 등 전국 곳곳으로 초미세먼지 주의보까지 발효 중인데요. 
+
+자세한 날씨, 기상캐스터 연결해서 알아봅니다. 
+
+김민지 캐스터.
+
+[캐스터]
+
+네. 서울도서관 옥상에 올라와 있습니다.
+
+이렇게 뿌연 하늘이 펼쳐져 있어서 미세먼지 걱정하시는 분들 많으실 텐데요.
+
+오늘도 많이 주의하셔야겠습니다.
+
+초미세먼지는 일반 마스크로 가려지지 않을 정도니까요.
+
+꼭 식약청 인증마크가 적혀 있는 마스크를 착용하시는 것이 좋겠습니다.
+
+전국 대부분 지역의 공기질이 좋지 못합니다.
+
+서울은 오후 1시를 기준으로 초미세먼지 농도 세제곱미터당 85마이크로그램을 나타내고 있습니다.
+
+서울을 포함한 수도권은 초미세먼지 농도 매우 나쁨 단계로 더 심해졌고요.
+
+조금 전 서울에도 초미세먼지 주의보가 내려졌습니다.
+
+그밖의 경기와 충남, 전북과 인천에도 주의보가 내려진 상황입니다.
+
+동쪽지역은 동풍이 불어오면서 상대적으로 공기가 깨끗합니다만 강원 영동으로 가끔 비가 오겠고요.
+
+경북 북부 동해안은 밤부터 약하게 비가 내리겠습니다.
+
+절기상 입동인 내일도 초미세먼지가 기승을 부리겠습니다.
+
+전국 곳곳으로 비소식도 들어 있고요.
+
+절기답게 기온이 조금 내려가 한낮에는 15도 선에 머물겠습니다.
+
+올해는 서쪽으로 시작으로 비가 내리다가 낮에는 전국으로 확대되겠습니다.
+
+비가 내리면서 건조함과 미세먼지는 한층 나아지겠습니다.
+
+건조한 대기에 미세먼지까지 더해지면서 호흡기질환에 걸릴 가능성이 큽니다.
+
+수분 섭취 충분히 해 주시기 바랍니다.
+
+지금까지 날씨 전해드렸습니다. (김민지 기상캐스터)
+
+연합뉴스TV 기사문의 및 제보 : 카톡/라인 jebo23</p>
+	
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

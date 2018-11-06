@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+	window.onload = function() {
+	
+		
+		
+	};
+	
+	window.oncontextmenu = function() {
+	      event.preventDefault();
+	      return false;
+	   };
+	
+	
+	
+	
+	window.onmousedown = function() {
+		
+		var x = event.clientX;
+		var y = event.clientY;
+		
+		var cat = document.createElement("img");
+		
+		var n = parseInt(Math.random() * 20) +1;
+		
+		if(n <10) {
+			n= "0"+n;
+		}
+		cat.setAttribute("src","../images/catty" + n + ".png");
+		
+		if(event.buttons ==1) {
+		
+		
+		cat.style.position = "absolute";
+		cat.style.left = x -100 + "px";
+		cat.style.top = y -100 + "px";
+		
+		document.body.appendChild(cat);
+		
+		} else if(event.buttons == 2) {
+			document.body.removeChild(event.srcElement);
+		}
+		
+	};//onmousedown
+
+</script>
+</head>
+<body>
+	<!-- example14.htm -->
+	
+	
+	
+</body>
+</html>

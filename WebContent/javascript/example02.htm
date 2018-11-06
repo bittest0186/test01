@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+	
+	var img1;
+
+	window.onload = function() {
+		img1 = document.images["img1"];
+	};//onload
+	
+	
+	function src1() {
+		event.srcElement.src = "../images/" + event.srcElement.dataset.value + ".jpg";
+	};
+	
+	function src2() {
+		event.srcElement.src = "../images/" + event.srcElement.name + ".jpg";
+	};
+
+</script>
+</head>
+<body>
+	<!-- example02.htm -->
+	
+	<h1>롤오버 이미지</h1>
+	
+	<ul>
+		<li>고양이 <-> 강아지</li>
+		<li>ex23_event.htm 방식 사용(일괄처리)</li>
+	</ul>
+	
+	<img src="../images/cat01.jpg" alt="고양이1" name="cat01" onmouseover="src1();" onmouseout="src2();" data-value="dog01"/>
+	<img src="../images/cat02.jpg" alt="고양이2" name="cat02" onmouseover="src1();" onmouseout="src2();" data-value="dog02"/>
+	<img src="../images/cat03.jpg" alt="고양이3" name="cat03" onmouseover="src1();" onmouseout="src2();" data-value="dog03"/>
+	<img src="../images/cat04.jpg" alt="고양이4" name="cat04" onmouseover="src1();" onmouseout="src2();" data-value="dog04"/>
+	<img src="../images/cat05.jpg" alt="고양이5" name="cat05" onmouseover="src1();" onmouseout="src2();" data-value="dog05"/>
+</body>
+</html>

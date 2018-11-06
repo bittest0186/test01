@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+	var btn1;
+
+	window.onload = function() {
+	
+		btn1 = document.all.btn1;
+		
+		//history 객체
+		// - window 자식 객체
+		// - (현재 세션에 한해서) 브라우저의 방문 기록 접근/조작 객체
+		
+		btn1.onclick = function() {
+			
+			//window.history
+			//history.back(); //뒤로가기 버튼과 동일
+			//history.forward(); //앞으로가기 버튼과 동일
+			
+			//go(n) : n(양의 정수 ~ 음의 정수)
+			//history.go(-1);
+			//history.go(-2);
+			
+		};
+		
+	};//window.onload
+
+</script>
+</head>
+<body>
+	<!-- ex18_history.htm -->
+	<input type="button" name="btn1" value="테스트">
+	
+</body>
+</html>
