@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script>
+
+	//클로저,Closure
+	// - 나중에 사용될(호출될) 내부 함수를 위해서(이벤트 헨들러) 이미 소멸되어야할 지역변수를 임시로 끝까지 살려두는 기술
+	/*
+	function outer() {//전역 함수(window)
+		
+		var num = 10;//지역변수(outer)
+		console.log("outer : " + num);
+	
+		function inner() {//지역함수(outer)
+			
+			console.log("inner");
+			
+		}
+	
+		inner();
+	}
+	
+	
+	outer();
+	inner();//에러!!->Uncaught ReferenceError: inner is not defined
+	 */
+	 
+	 
+	 function outer() {
+		
+		var num = 20;
+		
+		function inner() {
+			console.log("inner : " + num);
+		}
+		inner();
+	};
+	 
+	outer();
+	
+	function Outer() {
+		
+		this.num = 30;
+		
+		this.inner = function() {
+			console.log(this.num);
+		};
+		
+	}
+	
+	var o1 = new Outer();
+	o1.inner;
+	
+	 
+	window.onload = function() {//Outer
+	
+			var num = 40; //지역변수(onload)
+		
+			document.getElementById("btn1").onclick = function() {//Inner
+				console.log("num : " + num); //클로저 발생
+			};
+			
+	};
+
+	
+	
+	
+</script>
+</head>
+<body>
+	<!-- ex56_closure.htm -->
+	<input type="button" value="버튼" id="btn1" />
+	
+	
+</body>
+</html>

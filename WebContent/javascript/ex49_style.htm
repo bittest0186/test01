@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#tbl1 td{
+		width: 100px;
+		height : 100px;
+	}
+
+</style>
+<script>
+
+	var cell;
+	var index = 0;
+
+	window.onload = function() {
+	
+		cell = document.getElementsByTagName("td");
+		
+		cell[index].style.backgroundColor = "tomato";
+		
+		
+	};//onload
+	
+	window.onkeydown = function() {
+		
+		clear();
+		
+		if(event.keyCode == 37){	//왼쪽 화살표
+			index--;
+			//if(index<0) {index=0;}
+			if(index<0) {index = cell.length -1;}
+		
+		} else if(event.keyCode == 39) { //오른쪽 화살표
+			index++;
+			//if(index>=cell.length) {index=cell.length-1;}
+			if(index>=cell.length) {index=0;}
+		}
+		
+		
+		cell[index].style.backgroundColor = "tomato";
+		
+	}//onkeydown
+	
+	function clear() {
+		
+		for(var i=0; i<cell.length; i++){
+			
+			cell[i].style.backgroundColor = "transparent";
+			
+		}//for
+		
+		
+	};//clear
+	
+	
+
+</script>
+</head>
+<body>
+	<!-- ex49_style.htm -->
+	
+	<!-- table#tbl1.table>tr*5>td*5 -->
+	<table id="tbl1" class="table">
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

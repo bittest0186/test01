@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+	.box{
+		border:1px solid black;
+		width:350px;
+		height: 350px;
+		background-color: yellow;
+		margin: 50px;
+	}
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+
+	$(document).ready(function(){
+
+		$("#cat1").draggable({
+			//axis : "x"
+			//axis : "y"
+			//grid : [50, 50] // 이동거리 틀
+		});
+		
+		$("#cat2").draggable({
+			containment:"#box1"
+		});
+
+		$("#cat3,#cat4,#cat5").draggable({
+			containment:"parent", // 각자 부모구역에서만
+			cursor:"move"
+		});
+		
+	});
+
+</script>
+</head>
+<body>
+	<!-- ex12_jqueryui.htm -->
+	
+	<img src="../images/catty01.png" id="cat1" />
+	
+	<div id="box1" class="box">
+		<img src="../images/catty02.png" id="cat2" />
+	</div>
+	
+	<div id="box2" class="box">
+		<img src="../images/catty03.png" id="cat3" />
+	</div>
+	
+	<div id="box3" class="box">
+		<img src="../images/catty04.png" id="cat4" />
+	</div>
+	
+	<div id="box4" class="box">
+		<img src="../images/catty05.png" id="cat5" />
+	</div>
+	
+</body>
+</html>

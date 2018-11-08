@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	#sel1 {
+		padding: 5px;
+		font-size:1.4em;
+	}
+	
+	#box{
+		width:250px;
+		height:188px;
+		border : 15px solid cornflowerblue;
+		overflow: hidden;
+	}
+	
+	#list{
+	
+		border:0px solid red;
+		
+		/* transform:translate(-250px,0px); */
+		width: 2500px;
+		
+		transition:all 1s;
+		
+	}
+	
+	
+	#box img {
+		float:left;
+	}
+
+</style>
+<script>
+
+	var sel1;
+	var box;
+	var list;
+	
+	window.onload = function() {
+	
+		sel1 = document.getElementById("sel1");
+		box = document.getElementById("box");
+		
+		sel1.addEventListener("change",function(){
+			
+			list = document.getElementById("list").style.transform
+			= "translate(-" + ((sel1.value - 1) * 250) + "px,0px)";
+			
+			
+		});
+		
+		
+	};//onload
+
+</script>
+</head>
+<body>
+	<!-- ex48_style.htm -->
+	
+	
+	<select name="" id="sel1">
+		<option value="1">고양이1</option>
+		<option value="2">고양이2</option>
+		<option value="3">고양이3</option>
+		<option value="4">고양이4</option>
+		<option value="5">고양이5</option>
+		<option value="6">강아지1</option>
+		<option value="7">강아지2</option>
+		<option value="8">강아지3</option>
+		<option value="9">강아지4</option>
+		<option value="10">강아지5</option>
+	</select>
+	
+	<hr />
+	
+	<div id="box">
+		<div id="list">
+			<img src="../images/cat01.jpg" alt="" />
+			<img src="../images/cat02.jpg" alt="" />
+			<img src="../images/cat03.jpg" alt="" />
+			<img src="../images/cat04.jpg" alt="" />
+			<img src="../images/cat05.jpg" alt="" />
+			<img src="../images/dog01.jpg" alt="" />
+			<img src="../images/dog02.jpg" alt="" />
+			<img src="../images/dog03.jpg" alt="" />
+			<img src="../images/dog04.jpg" alt="" />
+			<img src="../images/dog05.jpg" alt="" />
+		</div>
+	</div>
+	
+</body>
+</html>

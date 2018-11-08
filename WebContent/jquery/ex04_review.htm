@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+
+	$(document).ready(function(){
+
+		
+		//jQuery -> jQuery() 함수
+		// - Collection jQuery("CSS 선택자")
+		// - CSS 선택자에 의해서 선택된 태그가 1개 or 여러개 > Collection(배열) 반환
+		// - Collection.기능() : 내부적으로 loop 처리
+		
+		//var btn1 = documnet.getElementById("btn1");
+		//var btn1 = jQuery("#btn1");
+		
+		//jQuery("#btn1").mouseover();
+		//jQuery("#btn1").mouseout();
+		
+		jQuery("#btn1").click(function() {
+
+			//alert(jQuery(".box").length);
+			//jQuery(".box").css("color","blue");
+			
+			//jQuery() 와 순수 자바스크립트 사용을 헷갈리지 말자...
+			//jQuery("#box1").style.color = "blue"; //-> Ⅹ
+			//document.getElementById("box1").css("color","blue"); //-> Ⅹ
+			
+		});
+		
+		
+		
+		
+		
+	});
+
+</script>
+</head>
+<body>
+	<!-- ex04_review.htm -->
+	
+	<input type="button" value="테스트" id="btn1">
+	
+	<hr />
+	
+	<div id="box1" class="box">상자1</div>
+	<div id="box2" class="box">상자2</div>
+	<div id="box3" class="box">상자3</div>
+	
+</body>
+</html>

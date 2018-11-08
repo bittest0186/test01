@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+
+	#bar1,#bar2 {
+		
+		border:1px solid red;
+		position:relative;
+		
+	}
+
+	#bar2{
+		transform-origin:0px 0px;
+		transform : rotate(90deg);
+	}
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script>
+
+	var bar1,bar2;
+	var txt1;
+	
+	window.onload = function() {
+		txt1 = document.getElementById("txt1");
+		bar1 = document.getElementById("bar1");
+		bar2 = document.getElementById("bar2");
+		
+		bar1.style.width = (screen.availWidth*2);
+		bar2.style.height = (screen.availheight*2);
+		
+		var ox = event.offsetX;
+		var oy = event.offsetY;
+	};//onload
+	
+	window.onmousemove = function(){
+		var x = event.clientX;
+		var y = event.clientY;
+		txt1.value = x + ":" + y;
+		
+
+		
+		bar1.style.left = x + "px";
+		bar1.style.top = y + "px";
+		bar2.style.left = x + "px";
+		bar2.style.top = y + "px";
+		
+		
+		
+	}//onmousemove
+
+</script>
+</head>
+<body>
+	<!-- example18.htm -->
+	
+	<input type="text" id="txt1" />
+	
+	<hr id="bar1"/>
+	<hr id="bar2"/>
+	
+</body>
+</html>

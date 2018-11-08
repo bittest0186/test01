@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/css/css/basic.css">
+<style>
+
+	img, input, h1, table {position: absolute;}
+	
+
+</style>
+<script>
+
+	var img1;
+	var obj; //드래그 대상체
+	var isDown = false; //마우스 버튼 누름 상태
+	var ox,oy; // 어느 부위를 눌렀는지(offsetX,offsetY)
+	var zIndex = 1;
+	
+	
+	window.onload = function() {
+	
+		//img1 = document.getElementById("img1");
+		
+	};//onload
+	
+	window.onmousedown = function() {
+		isDown = true;
+		document.body.bgColor = "orange";
+		obj = event.srcElement;
+		ox = event.offsetX;	//눌린 부위
+		oy = event.offsetY;
+		obj.style.zIndex = zIndex;
+		zIndex++;
+	};//onmousedown
+	
+	
+	window.onmouseup = function() {
+		isDown = false;
+		document.body.bgColor = "white";
+	};//onmousedown
+	
+	
+	
+	window.onmousemove = function() {
+		
+		if(isDown){
+			
+			//event.clientX,event.clientY : 브라우저 좌측 상단 기준점
+			//position:absolute > 브라우저 좌측 상단 기준점
+			var x = event.clientX;
+			var y = event.clientY;
+			
+			obj.style.left = x - ox + "px";
+			obj.style.top = y - oy + "px";
+			
+			return false; //이미지 객체를 드래그 할 때 금지 커서 또는 현장 취소
+			
+		}
+		
+	}//onmousemove
+
+</script>
+</head>
+<body>
+	<!-- ex44_style.htm -->
+	<img src="../images/catty01.png" id = "img1" />
+	<img src="../images/catty02.png" id = "img2" />
+	<img src="../images/catty03.png" id = "img3" />
+	
+	
+	<!-- <input type="text" />
+	<input type="button" value="버튼" />
+	 -->
+	<!-- <h1>제목입니다.</h1> -->
+
+	<!-- table#tbl1>tr*20>td{아이템}*5 -->
+	<!-- <table id="tbl1" class="table">
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+		<tr>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+			<td>아이템</td>
+		</tr>
+	</table> -->
+
+
+
+
+</body>
+</html>
