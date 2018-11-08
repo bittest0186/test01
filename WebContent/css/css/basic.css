@@ -1,8 +1,8 @@
 /* basic.css */
 
-@import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
+/* @import url("https://use.fontawesome.com/releases/v5.4.1/css/all.css");
 @import url(//fonts.googleapis.com/earlyaccess/jejugothic.css); .jejugothic * { font-family: 'Jeju Gothic', sans-serif; }
-
+ */
 
 body,p,div,span,ul,ol,li,table,th,td,input,textarea,button {
 	font-family: 'Jeju Gothic';
@@ -77,5 +77,10 @@ a{
 	text-decoration: none;
 
 	}
+	
+a:hover {
+		color:tomato;
+	
+}
 
 

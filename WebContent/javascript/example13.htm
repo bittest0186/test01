@@ -55,14 +55,15 @@
 </style>
 <script>
 
-	var txtname,selage,rbgender,txtaddress;
+	var txtname,selage,rbgender1,rbgender2,txtaddress;
 	var btnadd, n=0;
 
 	window.onload = function() {
 	
 		txtname = document.getElementById("txtname");
 		selage = document.getElementById("selage");
-		rbgender = document.getElementsByName("rbgender");
+		rbgender1 = document.getElementById("rbgender1");
+		rbgender2 = document.getElementById("rbgender2");
 		txtaddress = document.getElementById("txtaddress");
 		tbody1 = document.getElementById("tbody1");
 		
@@ -79,6 +80,7 @@
 		};
 		
 		var tr = document.createElement("tr");
+		var tr2 = document.createElement("tr");
 		
 		
 		btnadd.onclick = function(){
@@ -98,7 +100,7 @@
 			
 			
 			var gender = document.createElement("td");
-			gender.innerText = rbgender.value;
+			gender.innerText = "남자";
 			tr.appendChild(gender);
 			
 			var address = document.createElement("td");
@@ -107,6 +109,7 @@
 			
 			
 			tbody1.appendChild(tr); // tr입력
+			tbody1.innerHTML += "</tr>";
 			n++;
 			} else {
 				tbody1.removeChild(tbody1.children[0]);
