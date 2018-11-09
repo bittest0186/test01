@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+
+	#box1{
+		border: 1px solid black;
+		width: 400px;
+		height: 400px;
+		transform:translate(500px,200px);
+	}
+	
+	#cat1 {
+		z-index:1;
+	}
+
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+
+	$(document).ready(function(){
+
+		$("#cat1").draggable();
+		
+		
+		$("#box1").droppable({
+			drop:function(){
+				//alert("확인");
+				$(this).css("background-color","tomato");
+				$("#cat1").draggable({
+					containment:"#box1" //containment => 드래그 제한 추가
+				});
+			},
+			out:function(){
+				$(this).css("background-color","white");
+			}
+		});//droppable
+		
+		$("#cat1").dblclick(function(){
+			$("#cat1").draggable({
+				//containment:null
+				containment:""
+			})
+		});//dblclick
+		
+	});//ready
+
+</script>
+</head>
+<body>
+	<!-- ex13_jqueryui.htm -->
+	
+	<img src="../images/catty01.png" id="cat1" />
+	
+	<div id="box1"></div>
+	
+</body>
+</html>

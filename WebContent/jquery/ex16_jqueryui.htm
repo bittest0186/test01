@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<link rel="stylesheet" href="/WebClientTest/jquery/css/jquery-ui.css">
+<style>
+	* {outline : none;}
+	
+	
+	#slider1,#c1,#c2,#c3,#c4,#c5{
+		width: 500px;
+		margin: 10px;
+		height: 8px;
+		font-size: 10px;
+	}
+	
+	#dog1 {
+		width: 50%;
+	}
+	
+	
+</style>
+<script src="/WebClientTest/jquery/js/jquery-1.12.4.js"></script>
+<script src="/WebClientTest/jquery/js/jquery-ui.js"></script>
+<script>
+
+
+	String.prototype.format = function() {
+	  a = this;
+	  for (k in arguments) {
+	    a = a.replace("{" + k + "}", arguments[k])
+	  }
+	  return a
+	}
+
+
+
+	$(document).ready(function(){
+
+		//아코디언
+		$("#a1").accordion({
+			collapsible:true,
+			heightStyle:"content"
+		});
+		
+		
+		//버튼
+		//$("#btns input").button();
+		$(":button").button();
+		$("#btns").controlgroup();
+		
+		//라디오(체크박스)
+		$("#level input").button();
+		$("#level input").controlgroup();
+		
+		
+		//날짜 / 시간
+		$("#birthday").datepicker({
+		
+			//minDate:"11/03/2018",
+			//maxDate:"11/25/2018"
+			//minDate:"-5", //-> 오늘 날짜에서 5일전
+			//maxDate:"5" //-> 오늘 날짜에서 5일후
+			//minDate:"-1M",// 한달전
+			//maxDate:"1M"//한달 후
+			minDate:"-1M -5D",// 한달 5일전
+			maxDate:"1M 5D"//한달 5일후
+			
+		});
+		
+		$("#birthday").datepicker("option","dateFormat","yy-mm-dd");
+		
+		
+		
+		
+		//대화상자
+		// - alert(), confirm(), prompt() 역할, window.open()
+		
+		//대화 상자의 형태
+		//1. Modeless
+		// - 자식창이 있어도 부모창에 포커스를 가질 수 있다.
+		// - 부모와 자식이 업무상 순서가 상관없는 경우(따라 진행해도 괜찮은 경우)
+		
+		//2. Modal
+		// - 자식창이 있으면 부모창에 포커스를 가질 수 없다.
+		// - 부모와 자식이 업무상 순서가 필요한 경우
+		// - 자식이 업무 진행 중일 떼 부모의 상태가 변경되면 안되는 경우
+		
+		$("#dialog1").hide();
+		$("#btn1").click(function(){
+			//$("#dialog1").show();
+			$("#dialog1").dialog({
+				title : "삭제.",
+				width:300,
+				height:250,
+				draggable:false,
+				resizable:false,
+				modal:true,
+				modeless:false,
+				buttons:{
+					"확인" : function(){
+						alert("확인");
+					},
+					"취소" : function(){
+						$("#dialog1").dialog("close");
+					}
+			
+				}//buttons
+			});
+			
+		});
+		
+		
+		$("#sel1").selectmenu();//모양정도만 바꾸기
+		
+		
+		$("#slider1").slider({
+			min:0,
+			max:1000,
+			step:100,
+			animate:true,
+			slide:function(event,ui){
+				console.log(ui.value);
+			}
+		});
+		
+		
+		$("#c1,#c2,#c3").slider({
+			min:0,
+			max:255,
+			value:255,
+			slide : function(event,ui){
+				//R,G,B
+				var r = $("#c1").slider("value");
+				var g = $("#c2").slider("value");
+				var b = $("#c3").slider("value");
+				
+				console.log(r,g,b);
+				
+				$("body").css("background-color","rgb({0},{1},{2})".format(r,g,b));
+				$("*").css("color","rgb({0},{1},{2})".format(256-r,256-g,256-b));
+				
+				
+			}
+		});
+		
+		
+		$("#c4").slider({
+			min:0,
+			max:360,
+			slide:function(event,ui){
+				$("#dog1").css("transform","rotate({0}deg) translate({1}px,0px)".format(ui.value,ui.value));
+			}
+		});
+		
+		$("#dog1").draggable();
+		
+		
+		
+		
+		//멀티 슬라이더(엄지 버튼 2개)
+		$("#c5").slider({
+			range:true,
+			min:0,
+			max:300000,
+			values:[70000,180000],
+			slide:function(event,ui){
+				console.log(ui.values[0],ui.values[1]);
+			}
+		});
+		
+		
+		
+		
+		$("*").tooltip({
+			
+			position:{my: "left top",at: "left bottom"}
+			
+		});
+		
+		
+		$("#tab1").css("width","600px");
+		
+		$("#tab1").tabs({
+			active:1
+		});
+		
+		
+		
+	});//ready
+
+</script>
+</head>
+<body>
+	<!-- ex16_jqueryui.htm -->
+	<h1 title="제목입니다.">jQuery UI Controls, Widgets, Components</h1>
+	
+	<ol>
+		<li>미리 정해진 규칙 태그 작성</li>
+		<li>1의 결과에 jQuery 함수 호출</li>
+	</ol>
+	
+	
+	<h2>탭</h2>
+	
+	<div id="tab1">
+		<ul>
+			<li><a href="#page1">자바,Java</a></li>
+			<li><a href="#page2">오라클,Oracle</a></li>
+			<li><a href="#page3">서블릿,Servlet</a></li>
+		</ul>
+		<div id="page1">자바.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis repudiandae facilis et veniam nulla porro officiis laboriosam laudantium commodi laborum. Hic corrupti qui officiis distinctio doloremque rem repellat accusantium. Numquam ipsa nemo distinctio nam incidunt sequi molestias vel sed earum consequatur maiores veritatis quae culpa quidem et dolores nesciunt! Distinctio minus illum tempore assumenda vel ipsa maiores nam voluptatem eligendi labore cum earum sunt neque fuga accusantium quam ducimus libero tenetur doloribus quas deleniti. Praesentium in nisi nemo nostrum sapiente. Aut reiciendis distinctio expedita dolor quo alias voluptatem error placeat eligendi excepturi explicabo nisi blanditiis totam incidunt illum in ipsam.</div>
+		<div id="page2">오라클.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio natus nemo fugiat explicabo illo debitis vitae et facere! Quo at quaerat et suscipit ut quisquam ad voluptatem amet aliquid incidunt placeat assumenda pariatur repudiandae! Qui animi rem architecto voluptate iusto incidunt nisi placeat saepe ut dolores cum quia fugiat nulla doloribus facilis deserunt ipsam natus corrupti sapiente consequuntur nemo quis iure et vitae blanditiis recusandae inventore. Maxime doloremque ipsa repellendus adipisci consequatur delectus beatae sapiente cum architecto perferendis corrupti rerum culpa voluptatem illum veniam vero itaque ab quos dolor magnam deserunt odit neque voluptates in labore nostrum praesentium dicta ipsum.</div>
+		<div id="page3">서블릿.Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet ad deserunt labore at magnam vel perspiciatis. Cupiditate eum vel soluta consequatur illo nesciunt odio maiores doloremque magnam expedita ipsum perspiciatis praesentium quae enim id? Corrupti maxime error eos nostrum atque aliquam quas itaque magnam quidem repudiandae dicta ad perspiciatis autem assumenda iusto libero saepe illum quibusdam non id cum obcaecati facilis consequuntur doloribus repellendus dolor ducimus optio. Impedit ipsam autem ipsa sapiente eaque at perspiciatis quo odit vel eius voluptas odio eligendi asperiores fugiat commodi? Nisi hic recusandae cupiditate odio aut distinctio dolores. Hic totam distinctio ad ex nulla maiores!</div>
+	</div>
+	
+	
+	<h2>멀티 슬라이더</h2>
+	
+	<div id="c5"></div>
+	
+	
+	<h2>슬라이더</h2>
+	
+	
+	<div id="c4"></div>
+	
+	<img src="../images/dog01_big.jpg" alt="" id="dog1" />
+	
+	
+	
+	<h2>문서 배경색</h2>
+	
+	<div id="c1" title="빨간색"></div>
+	<div id="c2"></div>
+	<div id="c3"></div>
+	
+	
+	
+	<h2>슬라이더</h2>
+	
+	<input type="range" />
+	<div id="slider1"></div>
+	
+	<h2>셀렉트박스</h2>
+	
+	<select id="sel1" title="현재 국가를 선택해주세요">
+		<option>대한민국</option>
+		<option>일본</option>
+		<option>중국</option>
+		<option>대만</option>
+	</select>
+	
+	
+	
+	<h2>대화 상자</h2>
+	<input type="button" value="확인" id="btn1"/>
+	<div id="dialog1">
+		정말 삭제하겠습니까?
+		<button>확인</button>
+	</div>
+	
+	
+	<h2>날짜/시간</h2>
+	생일 : <input type="date">
+	<hr>
+	생일 : <input type="text" id="birthday">
+	
+	
+	
+	<h2>테스트</h2>
+	
+	<div id="money">
+		<label for="txt1">금액</label>
+		<input type="number" id="txt1" />
+		<input type="button" value="금액" />
+	</div>
+	
+	
+	<h2>라디오(체크박스)</h2>
+	
+	<div id="level">
+		<input type="radio" name="rb" id="rb1" /><label for="rb1">상</label>
+		<input type="radio" name="rb" id="rb2" /><label for="rb2">중</label>
+		<input type="radio" name="rb" id="rb3" /><label for="rb3">하</label>
+	</div>
+	
+	
+	<h2>버튼</h2>
+	
+	<div id="btns">
+		<input type="button" value="버튼" />
+		<input type="button" value="버튼" />
+		<input type="button" value="버튼" />
+		<button type="button">버튼</button>
+		<button type="button">버튼</button>
+		<button type="button">버튼</button>
+	</div>
+	
+	
+	<h2>Accordion</h2>
+	
+	<div id="a1">
+		<h3>자바, Java</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quo in reiciendis veritatis maxime voluptatum cumque amet impedit dolorem dolor quam ex ab laborum rerum eaque sequi cum commodi magni ea suscipit vel qui nisi eius adipisci nobis beatae fuga aut quos ratione ut. Ducimus rem accusamus amet iure fuga illum doloribus quas saepe ipsam laudantium blanditiis similique voluptate porro magni error iusto labore consequatur nostrum fugit eveniet aperiam quasi sequi omnis cupiditate voluptatem tenetur veritatis quae accusantium minima cumque dignissimos ipsa non et! Dolorum voluptate nemo dolore amet nulla omnis quod perspiciatis iure perferendis corporis natus ad dolores animi.</p>
+		<h3>오라클, Oracle</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempora sed saepe iure fugiat vel consequuntur officiis eum omnis aut ab voluptatibus eveniet repellat non suscipit dolore maxime cumque dolor incidunt optio atque ipsa recusandae natus aliquam cum pariatur quam dolorem voluptatem? Veniam nisi magnam perspiciatis nulla similique blanditiis itaque fugiat quos ipsam reprehenderit illo qui minima laudantium voluptas minus excepturi vitae omnis incidunt quia distinctio. In facere aspernatur quasi aliquam quam voluptatem temporibus ut at ipsum eum possimus maiores rem neque ipsam harum iste vel dignissimos suscipit quisquam consequuntur dolorum officiis modi. Odit aliquam libero ipsum sunt iste tempore omnis.</p>
+		<h3>서블릿, Servlet</h3>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quos eos voluptate totam doloribus minima labore ipsum rem quaerat sit nulla velit dolores suscipit assumenda saepe beatae illum et? Numquam distinctio quidem nam placeat sapiente in atque impedit tenetur dicta fuga modi autem nobis cupiditate. Sint libero sed debitis hic molestias eius quo repellendus quibusdam. Doloremque officiis similique consequatur illum laudantium suscipit esse sit qui aliquam quidem exercitationem ab iusto rem modi alias in voluptatum. Ex tempora excepturi sed ut ad delectus molestias nihil minima aperiam a mollitia debitis fugit vel! Tempore voluptatem laudantium rerum mollitia quisquam voluptas possimus dignissimos earum aliquid vero. Quam similique repellendus aut sequi qui fugit esse reprehenderit consectetur quo iusto facere recusandae illum mollitia deserunt incidunt vel repellat accusamus maiores odit quas soluta doloremque consequuntur fuga iste impedit delectus ea maxime eum voluptate perspiciatis officia nesciunt autem et rem ipsum quibusdam ipsa doloribus nulla magni aperiam. Dolorem eligendi architecto error ut adipisci hic dolores repudiandae voluptatibus fugit eum illum maiores voluptatum iste tempora corporis. Natus consequuntur totam omnis dolore laborum numquam culpa similique delectus pariatur dicta repellat officiis sint iusto! Possimus quasi obcaecati ut ratione cupiditate tempore eveniet unde neque sunt aspernatur cum impedit eum illo. Laborum repellendus excepturi impedit quos quibusdam ducimus et. Fugit praesentium sapiente labore dolore assumenda itaque quae nobis laborum ipsum vel obcaecati error quod veritatis. Aspernatur debitis aliquam officiis molestiae odio at necessitatibus vero eaque natus recusandae animi saepe quibusdam a iste veniam temporibus quaerat dolor quasi culpa magnam consequatur fuga id reprehenderit. Itaque possimus sit nulla sunt repudiandae numquam excepturi accusamus ab repellendus ex sequi voluptatibus voluptas ipsam sapiente dignissimos tempora aspernatur praesentium fugiat unde commodi maiores delectus explicabo. Voluptatibus harum sunt facere totam modi corrupti praesentium tempora earum distinctio impedit aut vero est repellendus illum rem culpa suscipit doloremque sit excepturi aperiam recusandae veritatis maxime eius reprehenderit commodi? Voluptatum officiis ex ad saepe vero! Corrupti incidunt quidem culpa debitis minima ratione veniam harum in placeat adipisci! Eos modi incidunt laudantium voluptatibus blanditiis dignissimos perspiciatis. Perspiciatis eius eos voluptate porro dignissimos doloremque iusto quae distinctio ut voluptas perferendis impedit quia nulla nesciunt magni quo unde in obcaecati doloribus nihil! Rem accusamus repellat illo tenetur laudantium iste sequi obcaecati delectus ullam deserunt quidem doloremque consequuntur et totam nesciunt. Iste ea praesentium ducimus consectetur consequuntur! Corporis et ipsum fuga maxime mollitia rem officia molestiae natus omnis non neque ipsam architecto autem obcaecati quisquam temporibus totam quod cumque qui illo optio sequi quas veritatis numquam sint ad velit quia aliquid nihil quis possimus eius aspernatur saepe dolorum ea sunt placeat! Ipsam culpa quibusdam. Quod non maxime aut doloremque eius enim dolores maiores culpa unde neque dignissimos porro labore exercitationem ex doloribus reiciendis sequi consectetur esse ducimus sed nulla blanditiis nobis officia similique voluptas magni placeat architecto saepe alias aliquam illo ad eveniet sint! Repudiandae sit delectus omnis provident fuga quas dolorem mollitia vel ab soluta blanditiis impedit molestias ipsum officiis non nesciunt ullam sapiente quam id commodi architecto. Architecto minus deserunt id expedita.</p>
+	</div>
+	
+</body>
+</html>

@@ -11,7 +11,8 @@
 		
 		border:1px solid red;
 		position:relative;
-		
+		top:0px;
+		left:0px;
 	}
 
 	#bar2{
@@ -24,21 +25,22 @@
 <script>
 
 	var bar1,bar2;
-	var txt1;
+	//var txt1;
+	//var ox,oy;
 	
 	window.onload = function() {
-		txt1 = document.getElementById("txt1");
-		bar1 = document.getElementById("bar1");
-		bar2 = document.getElementById("bar2");
+		//txt1 = document.getElementById("txt1");
 		
-		bar1.style.width = (screen.availWidth*2);
-		bar2.style.height = (screen.availheight*2);
+		//bar1.style.width = (window.screen.availWidth*2);
+		//bar2.style.height =(window.screen.availHeight*2);
 		
-		var ox = event.offsetX;
-		var oy = event.offsetY;
+		//ox = event.offsetX;
+		//oy = event.offsetY;
 	};//onload
 	
 	window.onmousemove = function(){
+		bar1 = document.getElementById("bar1");
+		bar2 = document.getElementById("bar2");
 		var x = event.clientX;
 		var y = event.clientY;
 		txt1.value = x + ":" + y;
@@ -59,7 +61,7 @@
 <body>
 	<!-- example18.htm -->
 	
-	<input type="text" id="txt1" />
+	<!-- <input type="text" id="txt1" /> -->
 	
 	<hr id="bar1"/>
 	<hr id="bar2"/>
